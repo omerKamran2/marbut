@@ -1,8 +1,10 @@
 // newsletter.tsx
 // calendly.tsx
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import Newsletter from './newsletter';
+import Calendly from "./calendly";
 
 
 export default function Contact() {
@@ -14,10 +16,10 @@ export default function Contact() {
                     <TabsTrigger value="calendly">Book Demo</TabsTrigger>
                 </TabsList>
                 <TabsContent value="newsletter">
-                <Newsletter/>
+                    <Newsletter/>
                 </TabsContent>
                 <TabsContent value="calendly">
-
+                    <Calendly/>
                 </TabsContent>
             </Tabs>
 
