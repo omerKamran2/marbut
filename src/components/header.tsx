@@ -69,8 +69,8 @@ function Icon(props: React.SVGProps<SVGSVGElement>) {
         <text
         x="0"
         y="20"
-        font-family="Arial, sans-serif"
-        font-size="20"
+        fontFamily="Arial, sans-serif"
+        fontSize="20"
         fill="currentColor"
         >
             Marbut
