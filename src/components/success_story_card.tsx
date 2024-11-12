@@ -1,8 +1,0 @@
-// picture
-// name
-
-// designation
-
-// feedback
-
-
