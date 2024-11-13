@@ -49,7 +49,20 @@ import {
 
   export default function SuccessStories() {
     return (
-        <main>
+        <div className="pb-8">
+            <div className="flex items-center justify-center pb-4">
+                <Card className="w-full max-w-md p-4">
+                    <CardTitle className="flex items-center justify-center">
+                        <h2>
+                            Why us?
+                        </h2>
+                    </CardTitle>
+                    <CardContent className="flex items-center justify-center">
+                        Hear from our customers
+                    </CardContent>
+                </Card>
+    
+            </div>
             <div className="grid grid-cols-3 gap-8">
                 {testies.map(test => (
                     <Card key={test.id}>
@@ -68,7 +81,7 @@ import {
                     </Card>
                 ))}
             </div>
-        </main>
+        </div>
     );
   }
   
