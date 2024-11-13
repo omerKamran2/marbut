@@ -30,17 +30,7 @@ import {
                 <p></p>
                 </CardFooter>
             </Card>
-
-            <br/>
-            <div className="flex items-center justify-center">
-            <Card className="w-full max-w-md p-4">
-                <CardContent className="flex items-center justify-center">
-                    <h2>Why us?</h2>
-                </CardContent>
-            </Card>
-    
-            </div>
-        </main>
+        </div>
     );
   }
   
