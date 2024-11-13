@@ -2,6 +2,7 @@
 import Header from "@/components/header";
 import About from "@/components/about";
 import SuccessStories from "@/components/succes_stories";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header/>
       <About/>
       <SuccessStories/>
+      <Contact/>
     </main>
   );
 }
