@@ -13,6 +13,8 @@
 
 import { Button } from "./ui/button"
 import { Card } from "./ui/card"
+import Link from "next/link"
+
 
 export default function Header() {
   const scrollToSection = (id: string) => {
@@ -24,9 +26,10 @@ export default function Header() {
       <Card className="bg-black text-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <header className="flex h-20 w-full items-center px-4 md:px-6 justify-between">
-            
-            <Icon className="h-6 w-6" />
-            <span className="sr-only">Marbut</span>
+            <Link href="/" className="inline-block">
+              <Icon className="h-6 w-6" />
+              <span className="sr-only">Marbut</span>
+            </Link>
 
             <div className="flex gap-2 mx-auto">
               <Button
