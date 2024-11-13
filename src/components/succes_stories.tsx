@@ -6,6 +6,8 @@
 // designation
 
 // feedback
+import Image from 'next/image'
+import { QuoteIcon } from 'lucide-react'
 
 
 const testies = [
@@ -13,19 +15,19 @@ const testies = [
         id: "1",
         name: "Umar Saeed Cheema",
         designation: "Software Engineer",
-        feedback: "Full ok"
+        feedback: "Lorem Ipsum is simply dummy text of the printing and.Lorem Ipsum is simply dummy text of the printing and."
     },
     {
         id: "2",
         name: "Potato",
         designation: "Software Engineer",
-        feedback: "Behtareen"
+        feedback: "BehtareenLorem Ipsum is simply dummy text of the printing and."
     },
     {
         id: "3",
         name: "Mukeet",
         designation: "Software Engineer",
-        feedback: "Bambu"
+        feedback: "BambuvLorem Ipsum is simply dummy text of the printing and.Lorem Ipsum is simply dummy text of the printing and."
     }
 ]
 
@@ -67,16 +69,28 @@ import {
                 {testies.map(test => (
                     <Card key={test.id}>
                         <CardHeader>
-                            <div>
-                                <CardTitle>{test.name}</CardTitle>
-                                <CardDescription>{test.designation}</CardDescription>
-                                {/* Can add picture here */}
+                            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                                <Image
+                                    className="rounded-full shadow-lg"
+                                    src="/cheema.jpg"
+                                    width={100}
+                                    height={100}
+                                    alt={`${test.name}'s profile picture`}
+                                />
+                                <div className="text-center sm:text-left pt-4">
+                                    <h3 className="text-lg font-semibold">{test.name}</h3>
+                                    <p className="text-sm text-muted-foreground">{test.designation}</p>
+                                </div>
                             </div>
                         </CardHeader>
                         <CardContent>
-                            <p>
+                        <div className="relative">
+                            <QuoteIcon className="absolute top-0 left-0 text-muted-foreground/50 h-8 w-8 -translate-x-2 -translate-y-2" />
+                            <QuoteIcon className="absolute bottom-0 right-0 text-muted-foreground/50 h-8 w-8 rotate-180" />
+                            <blockquote className="px-8 py-4 italic text-muted-foreground">
                                 {test.feedback}
-                            </p>
+                            </blockquote>
+                        </div>
                         </CardContent>
                     </Card>
                 ))}
