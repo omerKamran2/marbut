@@ -2,7 +2,7 @@ import { LinkedinIcon as LinkedIn, Twitter, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-4 w-full">
+    <footer className="rounded-xl bg-primary text-primary-foreground py-4 w-full">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-4 px-4">
         {/* Contacts Section (Left) */}
         <div className="flex flex-col items-center md:items-start space-y-2 order-2 md:order-1">
