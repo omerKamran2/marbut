@@ -11,7 +11,6 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
-import Link from "next/link"
 import { Button } from "./ui/button"
 import { Card } from "./ui/card"
 
