@@ -1,3 +1,4 @@
+"use client";
 // logo
 // success stories
 // services
@@ -24,22 +25,22 @@ export default function Header() {
           <span className="sr-only">Marbut</span>
         </Link>
             <div className="flex gap-2 mx-auto">
-                <Link
-                href="#"
+                <Link onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
+                href=""
                 className="inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                 prefetch={false}
                 >
                     About Us
                 </Link>
-                <Link
-                    href="#"
+                <Link onClick={() => document.getElementById("success_stories").scrollIntoView({ behavior: "smooth" })}
+                    href=""
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                     prefetch={false}
                 >
                     Success Stories
                 </Link>
-                <Link
-                    href="#"
+                <Link onClick={() => document.getElementById("services").scrollIntoView({ behavior: "smooth" })}
+                    href=""
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                     prefetch={false}
                 >
@@ -47,10 +48,16 @@ export default function Header() {
                 </Link>
             </div>
             <div className="flex gap-2 ml-auto">
-                <Button variant="outline" className="justify-self-end px-2 py-1 text-xs">
-                Book Demo
-                </Button>
-                <Button className="justify-self-end px-2 py-1 text-xs">Start Hiring</Button>
+            
+            <Button
+              className="justify-self-end px-2 py-1 text-xs bg-primary text-primary-foreground hover:bg-primary/90 rounded transition-colors"
+              onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+            >
+              Start Hiring
+            </Button>
+
+
+            
             </div>
       </header>
     </div>
