@@ -88,3 +88,7 @@ h2 {
   @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight
   transition-colors first:mt-0;
 }
+
+.shadow-bottom-only{
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
