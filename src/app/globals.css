@@ -73,7 +73,7 @@ body {
 
 
 main, nav {
-  @apply max-w-6xl mx-auto my-12;
+  @apply max-w-6xl mx-auto ;
 }
 
 p {
