@@ -17,9 +17,8 @@ import {
   
   export default function About() {
     return (
-        <main>
-
-            <Card>
+        <div className="pb-8">
+            <Card className="h-[400px]">
                 <CardHeader>
                 <CardTitle></CardTitle>
                 <CardDescription></CardDescription>
