@@ -33,9 +33,9 @@ import {
 export default function Services() {
     return (
         <div className="pb-8 card-container">
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {services.map(test => (
-                    <Card key={test.id} className="h-[400px] flex flex-col items-center justify-center">
+                    <Card key={test.id} className="h-[400px] flex flex-col items-center justify-center services-container">
                         <CardHeader className="flex items-center justify-center">
                             <div>
                                 <CardTitle className="text-center">{test.service}</CardTitle>
@@ -58,5 +58,5 @@ export default function Services() {
             </Card>
         </div>
     );
-  }
+}
   
