@@ -51,7 +51,7 @@ import {
 
   export default function SuccessStories() {
     return (
-        <div className="pb-8">
+        <div className="pb-8 card-container">
             <div className="flex items-center justify-center pb-4">
                 <Card className="w-full max-w-md p-4">
                     <CardTitle className="flex items-center justify-center">

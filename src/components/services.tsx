@@ -32,7 +32,7 @@ import {
 
 export default function Services() {
     return (
-        <div className="pb-8">
+        <div className="pb-8 card-container">
             <div className="grid grid-cols-3 gap-8">
                 {services.map(test => (
                     <Card key={test.id} className="h-[400px] flex flex-col items-center justify-center">
