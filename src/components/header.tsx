@@ -82,7 +82,7 @@ export default function Header() {
               </Button>
             </div>
 
-            {/* Action Button */}
+
             <div className="hidden md:flex gap-2 ml-auto">
               <Button
                 className="justify-self-end px-4 py-2 text-sm bg-primary text-primary-foreground hover:bg-primary/90 rounded transition-colors"
@@ -92,9 +92,11 @@ export default function Header() {
               </Button>
             </div>
           </header>
+
+          
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="flex flex-col items-center mt-4 gap-2 md:hidden bg-black text-white p-4 rounded-lg transition-all duration-300">
+            <div className="flex flex-col items-center gap-2 pb-4 md:hidden bg-black text-white rounded-lg">
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("about")}
@@ -112,7 +114,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("services")}
-                className="text-white hover:text-gray-300 hover:bg-gray-800"
+                className="text-white hover:text-gray-300 hover:bg-gray-800 mb-10"
               >
                 Services
               </Button>
