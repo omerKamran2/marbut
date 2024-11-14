@@ -1,13 +1,28 @@
-import {
-    Card,
-} from "@/components/ui/card";
+'use client';
+
+import { useEffect } from 'react';
+import { Card } from "@/components/ui/card";
 
 export default function Calendly() {
-    //palceholder calender
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script); // Clean up the script on unmount
+        };
+    }, []);
+
     return (
         <Card className="w-full md:w-1/2 flex flex-col h-[800px]">
-          <div className="calendly-inline-widget h-[775px]" data-url="https://calendly.com/omer-kamran4466/custom-1on1"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <div
+                className="calendly-inline-widget"
+                // replace with link
+                data-url="https://calendly.com/omer-kamran4466/custom-1on1"
+                style={{ minWidth: '320px', height: '800px' }}
+            ></div>
         </Card>
     );
 }
