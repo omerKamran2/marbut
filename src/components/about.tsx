@@ -34,13 +34,13 @@ export default function About() {
     return (
         <div className="pb-8 card-container">
             <motion.div
-                className="h-[400px]"
+                className=""
                 variants={cardVariants}
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 0.5 }}
             >
-                <Card className="h-[400px]">
+                <Card className="h-[600px]">
                     <CardHeader>
                     <CardTitle></CardTitle>
                     <CardDescription></CardDescription>
