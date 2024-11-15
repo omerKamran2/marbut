@@ -18,7 +18,7 @@ import Link from "next/link"
 
 import { useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Header() {
@@ -29,6 +29,17 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false); // Close menu after clicking
+  };
+
+  const dropdownContainerVariants = {
+    hidden: { height: 0, opacity: 0 },
+    visible: { height: "auto", opacity: 1 },
+    exit: { height: 0, opacity: 0 },
+  };
+
+  const menuItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -102,37 +113,46 @@ export default function Header() {
 
           
           {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="flex flex-col items-center gap-2 pb-4 md:hidden bg-black text-white rounded-lg">
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("about")}
-                className="text-white hover:text-gray-300 hover:bg-gray-800"
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className="flex flex-col items-center gap-2 pb-4 md:hidden bg-black text-white rounded-lg overflow-hidden"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={dropdownContainerVariants}
+                transition={{ duration: 0.4 }}
               >
-                About Us
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("success_stories")}
-                className="text-white hover:text-gray-300 hover:bg-gray-800"
-              >
-                Success Stories
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("services")}
-                className="text-white hover:text-gray-300 hover:bg-gray-800 mb-10"
-              >
-                Services
-              </Button>
-              <Button
-                className="px-4 py-2 text-sm bg-primary text-primary-foreground hover:bg-primary/90 rounded transition-colors"
-                onClick={() => scrollToSection("contact")}
-              >
-                Start Hiring
-              </Button>
-            </div>
-          )}
+                  <Button
+                    variant="ghost"
+                    onClick={() => scrollToSection("about")}
+                    className="text-white hover:text-gray-300 hover:bg-gray-800"
+                  >
+                    About Us
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    onClick={() => scrollToSection("success_stories")}
+                    className="text-white hover:text-gray-300 hover:bg-gray-800"
+                  >
+                    Success Stories
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    onClick={() => scrollToSection("services")}
+                    className="text-white hover:text-gray-300 hover:bg-gray-800 mb-10"
+                  >
+                    Services
+                  </Button>
+                  <Button
+                    className="px-4 py-2 text-sm bg-primary text-primary-foreground hover:bg-primary/90 rounded transition-colors"
+                    onClick={() => scrollToSection("contact")}
+                  >
+                    Start Hiring
+                  </Button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </Card>
     </motion.div>
