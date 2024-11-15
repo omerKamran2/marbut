@@ -18,6 +18,8 @@ import Link from "next/link"
 
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 
 export default function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -30,7 +32,12 @@ export default function Header() {
   };
 
   return (
-    <div className="pb-8 header-container">
+    <motion.div 
+      className="pb-8 header-container"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Card className="bg-black text-white">
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -128,7 +135,7 @@ export default function Header() {
           )}
         </div>
       </Card>
-    </div>
+    </motion.div>
   )
 }
 
