@@ -24,12 +24,25 @@ import {
                 <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent>
-                <p></p>
+                    <p></p>
                 </CardContent>
                 <CardFooter>
-                <p></p>
+                    <p></p>
                 </CardFooter>
             </Card>
+
+            <div className="flex items-center justify-center mt-4">
+                <Card className="w-full max-w-md p-4">
+                    <CardTitle className="flex items-center justify-center">
+                        <h2 className="pb-2 border-b">
+                            Why us?
+                        </h2>
+                    </CardTitle>
+                    <CardContent className="flex items-center justify-center pt-2">
+                        Hear from our customers
+                    </CardContent>
+                </Card>
+            </div>
         </div>
     );
   }
