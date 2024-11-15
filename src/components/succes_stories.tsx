@@ -49,9 +49,9 @@ import {
   } from "@/components/ui/card"
 
 
-  export default function SuccessStories() {
+export default function SuccessStories() {
     return (
-        <div className="pb-8">
+        <div className="pb-8 card-container">
             <div className="flex items-center justify-center pb-4">
                 <Card className="w-full max-w-md p-4">
                     <CardTitle className="flex items-center justify-center">
@@ -65,7 +65,7 @@ import {
                 </Card>
     
             </div>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8">
                 {testies.map(test => (
                     <Card key={test.id}>
                         <CardHeader>
@@ -97,5 +97,5 @@ import {
             </div>
         </div>
     );
-  }
+}
   

@@ -7,7 +7,7 @@ import Calendly from "./calendly";
 
 export default function Contact() {
     return (
-        <div className="container mx-auto pb-8">
+        <div className="container mx-auto pb-8 card-container">
             <div className="flex flex-col md:flex-row gap-4">
                 <Newsletter/>
                 <Calendly/>

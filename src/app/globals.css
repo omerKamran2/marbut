@@ -92,3 +92,22 @@ h2 {
 .shadow-bottom-only{
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
+@media only screen and (max-device-width: 430px) and (orientation: portrait) {
+  /* Your styles here */
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  
+  .services-container {
+    height: 300px;
+  }
+}
