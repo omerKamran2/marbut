@@ -20,7 +20,7 @@ export default function Calendly() {
             <div
                 className="calendly-inline-widget"
                 // replace with link
-                data-url="https://calendly.com/omer-kamran4466/custom-1on1"
+                data-url="https://calendly.com/msani321/discovery-call "
                 style={{ minWidth: '320px', height: '800px' }}
             ></div>
         </Card>
