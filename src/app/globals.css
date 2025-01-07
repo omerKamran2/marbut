@@ -111,3 +111,40 @@ h2 {
     height: 300px;
   }
 }
+
+.custom-grid {
+  display: grid;
+  grid-template-areas:
+      "card1 card2 card3 card4"
+      "card1 card5 card6 card4";
+  grid-template-columns: 3fr 2fr 2fr 3fr;
+  grid-template-rows: auto auto;
+}
+
+.service-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.card-1 {
+  grid-area: card1;
+  height: 700px;
+}
+.card-2 {
+  grid-area: card2;
+}
+.card-3 {
+  grid-area: card3;
+}
+.card-4 {
+  grid-area: card4;
+  height: 700px
+}
+.card-5 {
+  grid-area: card5;
+}
+.card-6 {
+  grid-area: card6;
+}
