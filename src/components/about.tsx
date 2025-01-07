@@ -61,16 +61,20 @@ export default function About() {
                 animate="visible"
                 transition={{ duration: 0.5 }}
             >
-                <Card className="w-full max-w-md p-4">
-                    <CardTitle className="flex items-center justify-center">
-                        <h2 className="pb-2 border-b">
+                 {/* <Card className="w-full max-w-md p-4">
+                    <CardTitle className="flex items-center justify-center"> */}
+                    <div className="flex flex-col justify-center">
+                        <h2 className="pb-2 border-b flex justify-center">
                             Why us?
                         </h2>
-                    </CardTitle>
-                    <CardContent className="flex items-center justify-center pt-2">
-                        Hear from our customers
-                    </CardContent>
-                </Card>
+                        <span>
+                            Hear from our customers
+                        </span>
+                    </div>
+                    {/* </CardTitle> */}
+                    {/* <CardContent className="flex items-center justify-center pt-2"> */}
+                    {/* </CardContent> */}
+                {/* </Card> */}
             </motion.div>
         </div>
     );
