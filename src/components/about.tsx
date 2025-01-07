@@ -40,19 +40,41 @@ export default function About() {
                 animate="visible"
                 transition={{ duration: 0.5 }}
             >
-                <Card className="h-[600px]">
+                <Card className="h-[500px] p-6">
                     <CardHeader>
-                    <CardTitle></CardTitle>
-                    <CardDescription></CardDescription>
+                        <CardTitle className="text-center text-xl font-bold">About Us</CardTitle>
+                        <CardDescription className="text-center text-sm text-gray-500">
+                            Our Vision, Mission, and Motto
+                        </CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <p></p>
+                    <CardContent className="space-y-6">
+                        <div>
+                            <h2 className="text-lg font-semibold">Vision Statement:</h2>
+                            <p className="text-base text-gray-700">
+                                "Making the world recognize and leverage the power of Pakistani talent."
+                            </p>
+                        </div>
+                        <div className="">
+                            <h2 className="text-lg font-semibold">Mission Statement:</h2>
+                            <p className="text-base text-gray-700">
+                                "To deliver world-class recruitment solutions that highlight the excellence and affordability of Pakistani expertise."
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-semibold">Motto:</h2>
+                            <p className="text-base text-gray-700">
+                                "Affordable Talent, Unmatched Excellence."
+                            </p>
+                        </div>
                     </CardContent>
                     <CardFooter>
-                        <p></p>
+                        <p className="text-center text-sm text-gray-500">
+                            Together, we create opportunities and excellence.
+                        </p>
                     </CardFooter>
                 </Card>
             </motion.div>
+
 
             <motion.div 
                 className="flex items-center justify-center mt-4"
