@@ -88,7 +88,7 @@ export default function Services() {
                             Services
                         </h2>
                         <span>
-                            Exceptional services we offer
+                            Exceptional services we offe
                         </span>
                     </div>
                     {/* </CardTitle> */}
