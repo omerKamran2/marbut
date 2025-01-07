@@ -115,8 +115,9 @@ h2 {
 .custom-grid {
   display: grid;
   grid-template-areas:
-      "card1 card2 card3 card4"
-      "card1 card5 card6 card4";
+      "card1 card2 card2 card4"
+      "card1 card5 card5 card4"
+      "card3 card3 card6 card6";
   grid-template-columns: 3fr 2fr 2fr 3fr;
   grid-template-rows: auto auto;
 }

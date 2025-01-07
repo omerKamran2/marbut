@@ -123,10 +123,95 @@ export default function Services() {
                     ))}
                 </div>
                 <br/>
-                <Card className="h-[400px]">
-                    <CardContent className="flex items-center justify-center">
-                        Flow diagram
-                    </CardContent>
+                <Card className="">
+                <CardContent className="flex flex-col items-center justify-center space-y-6">
+                    <h2 className="text-xl font-bold text-center">Recruitment Process Flow</h2>
+                    <div className="w-full max-w-2xl">
+                        <ol className="relative border-l border-gray-300">
+                            {/* Step 1 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">1</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Discovery Call</h3>
+                                <p className="text-sm text-gray-600">
+                                    Discuss client’s hiring needs and expectations.
+                                </p>
+                            </li>
+                            {/* Step 2 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">2</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Job Description</h3>
+                                <p className="text-sm text-gray-600">
+                                    Create a detailed job description with client input.
+                                </p>
+                            </li>
+                            {/* Step 3 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">3</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Job Distribution</h3>
+                                <p className="text-sm text-gray-600">
+                                    Share the job with our talent database and partner universities.
+                                </p>
+                            </li>
+                            {/* Step 4 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">4</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Candidate Shortlisting</h3>
+                                <p className="text-sm text-gray-600">
+                                    Present vetted candidates within 48-96 hours.
+                                </p>
+                            </li>
+                            {/* Step 5 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">5</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Client Interviews</h3>
+                                <p className="text-sm text-gray-600">
+                                    Client conducts interviews in one or more rounds.
+                                </p>
+                            </li>
+                            {/* Step 6 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">6</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Offer Placement</h3>
+                                <p className="text-sm text-gray-600">
+                                    Client extends an offer; candidate signs the letter.
+                                </p>
+                            </li>
+                            {/* Step 7 */}
+                            <li className="mb-10 ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">7</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Invoice & Payment</h3>
+                                <p className="text-sm text-gray-600">
+                                    Invoice issued post-signature, payable within 30 days.
+                                </p>
+                            </li>
+                            {/* Step 8 */}
+                            <li className="ml-6">
+                                <div className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500">
+                                    <span className="text-white font-bold text-sm">8</span>
+                                </div>
+                                <h3 className="text-lg font-semibold text-gray-800">Free Replacement</h3>
+                                <p className="text-sm text-gray-600">
+                                    Replacement provided if hire leaves within 60 days.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </CardContent>
+
                 </Card>
             </div>
         </>
