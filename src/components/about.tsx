@@ -40,7 +40,7 @@ export default function About() {
                 animate="visible"
                 transition={{ duration: 0.5 }}
             >
-                <Card className="h-[500px] p-6">
+                <Card className="p-6">
                     <CardHeader>
                         <CardTitle className="text-center text-xl font-bold">About Us</CardTitle>
                         <CardDescription className="text-center text-sm text-gray-500">
