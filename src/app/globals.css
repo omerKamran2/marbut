@@ -122,6 +122,50 @@ h2 {
   grid-template-rows: auto auto;
 }
 
+@media (max-width: 768px) {
+  .custom-grid {
+    grid-template-areas:
+      "card1 card1"
+      "card2 card3"
+      "card2 card3"
+      "card4 card4"
+      "card4 card4"
+      "card5 card5"
+      "card6 card6";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .card-1 {
+    grid-area: card1;
+    height: 420px;
+  }
+
+  .card-2 {
+    grid-area: card2;
+    height: 550px
+  }
+
+  .card-3 {
+    grid-area: card3;
+    height: 550px
+  }
+
+  .card-4 {
+    grid-area: card4;
+    height: 540px
+  }
+
+  .card-5 {
+    grid-area: card5;
+    height: 220px;
+  }
+
+  .card-6 {
+    grid-area: card6;
+    height: 230px
+  }
+}
+
 .service-card {
   border: 1px solid #ccc;
   padding: 1rem;
@@ -131,7 +175,6 @@ h2 {
 
 .card-1 {
   grid-area: card1;
-  height: 700px;
 }
 .card-2 {
   grid-area: card2;
@@ -141,7 +184,6 @@ h2 {
 }
 .card-4 {
   grid-area: card4;
-  height: 700px
 }
 .card-5 {
   grid-area: card5;
