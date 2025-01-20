@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  fontFamily: Arial, Helvetica, sans-serif;
+/* body {
+  font-family: Helvetica;
+} */ 
+
+@font-face {
+  font-family: 'onsite';
+  src: url('/fonts/OnsiteStandardTRIAL-Regular-BF64b60bd6980ca.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'onsite';
+  src: url('/fonts/OnsiteStandardTRIAL-Bold-BF64b60bd69b69d.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'onsite';
+  src: url('/fonts/OnsiteCondensedTRIAL-RegularItalic-BF64b60bd66630e.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+} */
+
+.my-font-family {
+  font-family: 'onsite', serif;
+}
+
 
 @layer base {
   :root {
