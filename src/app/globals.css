@@ -20,6 +20,21 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'neuecorp';
+  src: url('/fonts/PPNeueCorp-NormalMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'neuecorp';
+  src: url('/fonts/PPNeueCorp-NormalUltrabold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* @font-face {
   font-family: 'onsite';
   src: url('/fonts/OnsiteCondensedTRIAL-RegularItalic-BF64b60bd66630e.otf') format('opentype');
@@ -28,7 +43,7 @@
 } */
 
 .my-font-family {
-  font-family: 'onsite', serif;
+  font-family: 'neuecorp', serif;
 }
 
 
