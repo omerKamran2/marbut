@@ -63,7 +63,7 @@ export default function SuccessStories() {
                 </p>
             </div>
             <motion.div
-                className="grid md:grid-cols-3 sm:grid-cols-1 gap-4 pb-8 card-container"
+                className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 pb-8 card-container"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{
