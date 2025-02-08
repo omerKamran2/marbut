@@ -62,7 +62,7 @@ export default function Header() {
       transition={{ duration: 0.5 }}
     >
       <Card className="bg-white text-black">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="mx-auto px-4 md:px-6 lg:px-8">
           <header className="flex h-20 w-full items-center justify-between">
             <Link href="/" className="inline-block">
               <span className="text-[30px]">Marbūt</span>
