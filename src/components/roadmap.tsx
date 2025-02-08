@@ -1,0 +1,74 @@
+"use client";
+import { FC } from "react";
+
+const RoadMap: FC = () => {
+  // Define your steps data here
+  const steps = [
+    {
+      title: "Discovery Call",
+      description:
+        "We start with a deep dive into your hiring needs, expectations, and team dynamics.",
+    },
+    {
+      title: "Job Description",
+      description:
+        "Together, we craft a detailed job description that aligns with your exact requirements.",
+    },
+    {
+      title: "Job Distribution",
+      description:
+        "We tap into our exclusive talent network and top university partnerships to source the best candidates.",
+    },
+    {
+      title: "Candidate Shortlisting",
+      description:
+        "Within 48–96 hours, we present rigorously vetted candidates ready for your review.",
+    },
+    {
+      title: "Client Interviews",
+      description:
+        "You interview and assess shortlisted candidates through one or more rounds.",
+    },
+    {
+      title: "Offer Placement",
+      description:
+        "Once you select the right fit, you extend an offer, and the candidate signs the agreement.",
+    },
+    {
+      title: "Invoice & Payment",
+      description:
+        "We issue an invoice upon signature, payable within 30 days for complete flexibility.",
+    },
+    {
+      title: "Free Replacement Guarantee",
+      description:
+        "If your new hire leaves within 60 days, we find a replacement at no extra cost.",
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-4xl px-4 py-[100px] md:px-6 lg:px-8">
+      <h2 className="my-[100px] text-center text-[48px] font-normal text-gray-900">
+        Our Hiring Process
+      </h2>
+      <div className="space-y-8">
+        {steps.map((step, index) => (
+          <div key={index} className="flex items-center space-x-4">
+            {/* Placeholder for step image/thumbnail */}
+            <div className="h-[160px] w-[160px] flex-shrink-0 bg-gray-200" />
+
+            {/* Step Text */}
+            <div>
+              <h2 className="mb-1 font-normal text-gray-900 text-[24px]">
+                {index + 1}. {step.title}
+              </h2>
+              <p className="text-gray-700 text-[16px]">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default RoadMap;
