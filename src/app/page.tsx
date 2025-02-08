@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Header/>
-      <section id="about">
+      <section id="about" className="pt-[180px]">
         <About/>
       </section>
       <section id="success_stories">
