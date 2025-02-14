@@ -110,11 +110,11 @@ const ServicesSection: FC = () => {
           className="mb-16 flex flex-col md:flex-row md:items-start"
         >
           {/* Left Column: Title & Description */}
-          <div className="w-full md:w-1/2 md:pr-10">
-            <h2 className="mb-4 text-[48px] font-normal text-gray-900">
+          <div className="mt-6 w-full md:w-1/2 md:pr-10">
+            <h2 className="mb-10 text-[48px] font-medium text-gray-900">
               {service.title}
             </h2>
-            <p className="text-[24px] text-gray-700">
+            <p className="text-[24px] text-gray-700 font-medium">
               {service.description}
             </p>
           </div>
@@ -124,17 +124,17 @@ const ServicesSection: FC = () => {
             {service.features.map((feature, i) => (
               <div
                 key={i}
-                className="mb-6 flex items-center space-x-4 rounded-lg  p-4"
+                className="flex items-center space-x-4 rounded-lg"
               >
                 {/* Placeholder for an icon or image */}
                 {/* <div className="h-[160px] w-[160px] flex-shrink-0 rounded bg-gray-200" /> */}
                 <img src={feature.image} alt={feature.title} className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover" />
 
                 <div>
-                  <h3 className="text-[24px] font-thin text-gray-900">
+                  <h3 className="text-[24px] font-thin text-gray-900 font-medium">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-gray-700 text-[16px]">{feature.detail}</p>
+                  <p className="mt-1 text-gray-700 text-[16px] font-medium">{feature.detail}</p>
                 </div>
               </div>
             ))}

@@ -63,10 +63,10 @@ export default function Header() {
     >
       <Card className="bg-white text-black">
         <div className="flex justify-center mx-auto px-4 md:px-6 lg:px-8">
-          <header className="flex h-20 w-full items-center justify-between max-w-[1680px]">
+          <header className="flex h-20 w-full items-center justify-between max-w-[1680px] ">
             <Link href="/" className="inline-flex items-center">
               <img src="/assets/images/Logo.svg" alt="Marbūt Logo" className="h-8 w-8 mr-2" />
-              <span className="text-[30px]">Marbūt</span>
+              <span className="text-[40px] font-medium">Marbūt</span>
             </Link>
 
             {/* Mobile Menu Button */}
@@ -99,8 +99,8 @@ export default function Header() {
                 onClick={() => scrollToSection("about")}
                 className={
                   activeSection === "about"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px]"
-                    : "hover:text-gray-700 h-[32px] rounded-[8px]"
+                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]"
+                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
                 }
               >
                 About Us
@@ -112,8 +112,8 @@ export default function Header() {
                 onClick={() => scrollToSection("success_stories")}
                 className={
                   activeSection === "success_stories"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px]"
-                    : "hover:text-gray-700 h-[32px] rounded-[8px]"
+                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]"
+                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
                 }
               >
                 Success Stories
@@ -125,8 +125,8 @@ export default function Header() {
                 onClick={() => scrollToSection("services")}
                 className={
                   activeSection === "services"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px]"
-                    : "hover:text-gray-700 h-[32px] rounded-[8px]"
+                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]" 
+                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
                 }
               >
                 Services
@@ -134,7 +134,7 @@ export default function Header() {
 
               {/* Start Hiring */}
               <Button
-                className="px-4 py-2 text-sm bg-primary text-white hover:bg-primary/90 rounded transition-colors w-[178px] h-[32px] rounded-[8px]"
+                className="px-4 py-2 text-[16px] bg-primary text-white hover:bg-primary/90 rounded transition-colors w-[178px] h-[32px] rounded-[8px]"
                 onClick={() => scrollToSection("contact")}
               >
                 Start Hiring
