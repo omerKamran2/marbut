@@ -129,7 +129,7 @@ const ServicesSection: FC = () => {
           pin: leftCol,       // pin the left column
           pinSpacing: true,   // add space so the next sections are pushed down
           scrub: 1,           // tie the timeline's progress to the scroll
-          markers: true,     // or true for debugging
+          markers: false,     // or true for debugging
         },
       });
 
@@ -169,21 +169,21 @@ const ServicesSection: FC = () => {
           className="service-section mb-32 flex flex-col md:flex-row"
         >
           {/* Left Column */}
-          <div className="left-col w-full md:w-1/2 md:pr-10">
-            <h2 className="mb-6 text-3xl font-medium text-gray-900">
+          <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
+            <h2 className="mb-10 text-[48px] font-medium text-gray-900">
               {service.title}
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-[24px] text-gray-700 font-medium">
               {service.description}
             </p>
           </div>
 
           {/* Right Column */}
-          <div className="right-col mt-6 w-full md:mt-0 md:w-1/2 space-y-6">
+          <div className="right-col mt-6 w-full md:mt-0 md:w-1/2">
             {service.features.map((feature, i) => (
               <div
                 key={i}
-                className="feature-item flex items-start space-x-4 rounded-lg"
+                className="feature-item flex items-center space-x-4 rounded-lg"
               >
                 <img
                   src={feature.image}
@@ -191,10 +191,10 @@ const ServicesSection: FC = () => {
                   className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover"
                 />
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900">
+                  <h3 className="text-[24px] font-thin text-gray-900 font-medium">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-gray-700 text-base">
+                  <p className="mt-1 text-gray-700 text-[16px] font-medium">
                     {feature.detail}
                   </p>
                 </div>
