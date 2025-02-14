@@ -1,12 +1,17 @@
 "use client";
-import { FC } from "react";
+import { FC, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection: FC = () => {
+  const sectionsRef = useRef<HTMLElement[]>([]);
   const services = [
     {
       title: "Direct Hire Model",
       description:
-        "Once we connect you with the right talent, they become a part of your team, fully integrated into your payroll, benefits, and compliance system.",
+        "Once we connect you with the right talent, they become a part of your team...",
       features: [
         {
           title: "Hire the Top 1%",
@@ -27,17 +32,20 @@ const ServicesSection: FC = () => {
       features: [
         {
           title: "Candidate Screening",
-          detail: "We handle everything from resume reviews to interviews and skill assessments.",
+          detail:
+            "We handle everything from resume reviews to interviews and skill assessments.",
           image: "/assets/images/3.svg",
         },
         {
           title: "Cultural Fit Assessment",
-          detail: "We source candidates who align with your company’s values, work ethic, and vision.",
+          detail:
+            "We source candidates who align with your company’s values, work ethic, and vision.",
           image: "/assets/images/4.svg",
         },
         {
           title: "Global Time Zone Alignment",
-          detail: "We find talent that seamlessly adapts to your time zone requirements and integrates into your workflows.",
+          detail:
+            "We find talent that seamlessly adapts to your time zone requirements...",
           image: "/assets/images/5.svg",
         },
       ],
@@ -45,7 +53,7 @@ const ServicesSection: FC = () => {
     {
       title: "Tailored Solutions",
       description:
-        "We work closely with you to create customised recruitment solutions that align with your goals, growth plans, and long-term vision.",
+        "We work closely with you to create customised recruitment solutions...",
       features: [
         {
           title: "Fully Bespoke",
@@ -98,50 +106,104 @@ const ServicesSection: FC = () => {
         },
       ],
     },
-
   ];
 
+  useEffect(() => {
+    sectionsRef.current.forEach((section) => {
+      const leftCol = section.querySelector<HTMLElement>(".left-col");
+      const rightCol = section.querySelector<HTMLElement>(".right-col");
+
+      if (!leftCol || !rightCol) return;
+
+      const featureItems = rightCol.querySelectorAll(".feature-item");
+
+      // Create the timeline for this section
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          // start when the center of the section hits the center of the viewport
+          start: "center center",
+          // keep the leftCol pinned until the bottom of this section
+          // reaches the top of the viewport (so the next section can start)
+          end: "bottom center",
+          pin: leftCol,       // pin the left column
+          pinSpacing: true,   // add space so the next sections are pushed down
+          scrub: 1,           // tie the timeline's progress to the scroll
+          markers: true,     // or true for debugging
+        },
+      });
+
+      // Animate the left column in from below
+      tl.from(leftCol, {
+        y: 500,
+        opacity: 0,
+        duration: 1.5,
+        immediateRender: false, // important so it doesn't jump right away
+        ease: "power2.out",
+      });
+
+      // Animate the right column's features with a stagger
+      // We use a label (">0.5") so this starts 0.5s *after* the leftCol animation
+      tl.from(
+        featureItems,
+        {
+          y: 50,
+          opacity: 0,
+          stagger: 0.3,
+          duration: 1.5,
+          ease: "power2.out",
+        },
+        ">"
+      );
+    });
+  }, []);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-[100px]">
+    <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-[100px]">
       {services.map((service, idx) => (
-        <div
+        <section
           key={idx}
-          className="mb-16 flex flex-col md:flex-row md:items-start"
+          ref={(el) => {
+            if (el) sectionsRef.current[idx] = el;
+          }}
+          className="service-section mb-32 flex flex-col md:flex-row"
         >
-          {/* Left Column: Title & Description */}
-          <div className="mt-6 w-full md:w-1/2 md:pr-10">
-            <h2 className="mb-10 text-[48px] font-medium text-gray-900">
+          {/* Left Column */}
+          <div className="left-col w-full md:w-1/2 md:pr-10">
+            <h2 className="mb-6 text-3xl font-medium text-gray-900">
               {service.title}
             </h2>
-            <p className="text-[24px] text-gray-700 font-medium">
+            <p className="text-xl text-gray-700">
               {service.description}
             </p>
           </div>
 
-          {/* Right Column: Features */}
-          <div className="mt-6 w-full md:mt-0 md:w-1/2">
+          {/* Right Column */}
+          <div className="right-col mt-6 w-full md:mt-0 md:w-1/2 space-y-6">
             {service.features.map((feature, i) => (
               <div
                 key={i}
-                className="flex items-center space-x-4 rounded-lg"
+                className="feature-item flex items-start space-x-4 rounded-lg"
               >
-                {/* Placeholder for an icon or image */}
-                {/* <div className="h-[160px] w-[160px] flex-shrink-0 rounded bg-gray-200" /> */}
-                <img src={feature.image} alt={feature.title} className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover" />
-
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover"
+                />
                 <div>
-                  <h3 className="text-[24px] font-thin text-gray-900 font-medium">
+                  <h3 className="text-lg font-medium text-gray-900">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-gray-700 text-[16px] font-medium">{feature.detail}</p>
+                  <p className="mt-1 text-gray-700 text-base">
+                    {feature.detail}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       ))}
-    </section>
+    </div>
   );
 };
 

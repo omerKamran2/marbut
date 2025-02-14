@@ -232,3 +232,12 @@ h2 {
 .card-6 {
   grid-area: card6;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shifts */
+body {
+  overflow-x: hidden;
+}
