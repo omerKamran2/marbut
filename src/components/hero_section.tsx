@@ -7,7 +7,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardContent,
 } from "@/components/ui/card";
 
 const HeroSection: FC = () => {
@@ -46,7 +45,7 @@ const HeroSection: FC = () => {
                 />
               </div>
               {/* Title */}
-              <CardTitle className="text-center text-sm font-normal leading-tight text-[16px]">
+              <CardTitle className="text-center text-sm font-medium leading-tight text-[16px]">
                 {item.text}
               </CardTitle>
             </CardHeader>
