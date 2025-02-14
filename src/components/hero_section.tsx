@@ -42,7 +42,7 @@ const HeroSection: FC = () => {
                   alt={item.text}
                   width={60}
                   height={60}
-                  // or use a fixed size or "fill" layout
+                // or use a fixed size or "fill" layout
                 />
               </div>
               {/* Title */}
@@ -63,17 +63,16 @@ const HeroSection: FC = () => {
             alt="Colorful Wheel"
             width={300}
             height={300}
-            // or however you want to size it
+          // or however you want to size it
           />
         </div>
         {/* Heading */}
         <h2 className="mb-4 text-[48px] font-normal text-gray-900 md:text-3xl">
-          We craft teams with <br/> intention, precision, &amp; impact
+          We craft teams with <br /> intention, precision, &amp; impact
         </h2>
         {/* Subheading / Paragraph */}
         <p className="max-w-3xl text-[24px] text-gray-600 md:text-lg">
-          These aren’t just hires; they’re relentless contributors and owners <br/> 
-          who elevate your team’s talent density, striving to be 1% better everyday.
+          Our talent solutions ensure every hire is a strategic asset <br/>raising your team’s talent density, not just a seat filled.
         </p>
       </div>
     </section>
