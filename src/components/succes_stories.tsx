@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 import { motion } from 'framer-motion'
 
-const testies = [
+const testimonials = [
     {
         id: "1",
         name: "Ryan Gartin",
@@ -61,7 +61,7 @@ export default function SuccessStories() {
                     stiffness: 50
                 }}
             >
-                {testies.map(test => (
+                {testimonials.map(test => (
                     <Card key={test.id}>
                         <CardHeader>
                             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
@@ -73,8 +73,8 @@ export default function SuccessStories() {
                                     alt={`${test.name}'s profile picture`}
                                 />
                                 <div className="text-center sm:text-left pt-4">
-                                    <h3 className="text-lg font-semibold">{test.name}</h3>
-                                    <p className="text-sm text-muted-foreground">{test.designation}</p>
+                                    <h3 className="text-[24px] font-medium">{test.name}</h3>
+                                    <p className="text-[16px] text-muted-foreground font-medium">{test.designation}</p>
                                 </div>
                             </div>
                         </CardHeader>
@@ -82,7 +82,7 @@ export default function SuccessStories() {
                             <div className="relative">
                                 {/* <QuoteIcon className="absolute top-0 left-0 text-muted-foreground/50 h-8 w-8 -translate-x-2 -translate-y-2" />
                                 <QuoteIcon className="absolute bottom-0 right-0 text-muted-foreground/50 h-8 w-8 rotate-180" /> */}
-                                <blockquote className=" py-4 italic text-muted-foreground">
+                                <blockquote className="py-4 text-[14px] text-muted-foreground font-medium">
                                     {test.feedback}
                                 </blockquote>
                             </div>

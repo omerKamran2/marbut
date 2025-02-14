@@ -64,7 +64,7 @@ const RoadMap: FC = () => {
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-[100px] md:px-6 lg:px-8">
-      <h2 className="my-[100px] text-center text-[48px] font-normal text-gray-900">
+      <h2 className="my-[100px] text-center text-[48px] font-medium text-gray-900">
         Our Hiring Process
       </h2>
       <div className="space-y-8">
@@ -76,10 +76,10 @@ const RoadMap: FC = () => {
 
             {/* Step Text */}
             <div>
-              <h2 className="mb-1 font-normal text-gray-900 text-[24px]">
+              <h2 className="mb-1 font-medium text-gray-900 text-[24px]">
                 {index + 1}. {step.title}
               </h2>
-              <p className="text-gray-700 text-[16px]">{step.description}</p>
+              <p className="text-gray-700 text-[16px] font-medium">{step.description}</p>
             </div>
           </div>
         ))}

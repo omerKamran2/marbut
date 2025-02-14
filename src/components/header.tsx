@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
@@ -11,7 +11,7 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
 
   // We want to watch these sections
-  const sectionIds = ["about", "success_stories", "services", "contact"];
+  const sectionIds = ["about", "roadmap", "services", "contact"];
 
   useEffect(() => {
     const observerOptions = { threshold: 0.3 };
@@ -93,31 +93,7 @@ export default function Header() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-4">
-              {/* About Us */}
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("about")}
-                className={
-                  activeSection === "about"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]"
-                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
-                }
-              >
-                About Us
-              </Button>
 
-              {/* Success Stories */}
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("success_stories")}
-                className={
-                  activeSection === "success_stories"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]"
-                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
-                }
-              >
-                Success Stories
-              </Button>
 
               {/* Services */}
               <Button
@@ -131,6 +107,20 @@ export default function Header() {
               >
                 Services
               </Button>
+
+              {/* Success Stories */}
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("roadmap")}
+                className={
+                  activeSection === "roadmap"
+                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px] text-[16px]"
+                    : "hover:text-gray-700 h-[32px] rounded-[8px] text-[16px]"
+                }
+              >
+                Process
+              </Button>
+
 
               {/* Start Hiring */}
               <Button
@@ -153,23 +143,6 @@ export default function Header() {
                 variants={dropdownContainerVariants}
                 transition={{ duration: 0.4 }}
               >
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("about")}
-                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "about" ? "underline" : ""
-                    }`}
-                >
-                  About Us
-                </Button>
-
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("success_stories")}
-                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "success_stories" ? "underline" : ""
-                    }`}
-                >
-                  Success Stories
-                </Button>
 
                 <Button
                   variant="ghost"
@@ -179,6 +152,17 @@ export default function Header() {
                 >
                   Services
                 </Button>
+
+                <Button
+                  variant="ghost"
+                  onClick={() => scrollToSection("roadmap")}
+                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "roadmap" ? "underline" : ""
+                    }`}
+                >
+                  Process
+                </Button>
+
+                
 
                 <Button
                   className="px-4 py-2 text-sm bg-primary text-white hover:bg-primary/90 rounded transition-colors"

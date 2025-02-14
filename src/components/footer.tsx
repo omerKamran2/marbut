@@ -1,6 +1,10 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitterSquare, faInstagram, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 // Footer
 export default function Footer() {
@@ -19,50 +23,20 @@ export default function Footer() {
             </Link> */}
 
             {/* Marbut text */}
-            <span className="text-[30px]">Marbūt</span>
+            <Link href="/" className="inline-flex items-center">
+              <img src="/assets/images/Logo.svg" alt="Marbūt Logo" className="h-8 w-8 mr-2" />
+              <span className="text-[40px] font-medium">Marbūt</span>
+            </Link>
 
             {/* Icons under "Marbut" */}
-            <div className="flex ">
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-black hover:text-gray-300 hover:bg-gray-800"
-              >
-                <Link href="#" aria-label="LinkedIn">
-                  <Linkedin className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-black hover:text-gray-300 hover:bg-gray-800"
-              >
-                <Link href="#" aria-label="Twitter">
-                  <Twitter className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-black hover:text-gray-300 hover:bg-gray-800"
-              >
-                <Link href="#" aria-label="Instagram">
-                  <Instagram className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-black hover:text-gray-300 hover:bg-gray-800"
-              >
-                <Link href="#" aria-label="Facebook">
-                  <Facebook className="h-4 w-4" />
-                </Link>
-              </Button>
+            
+            <div className="flex gap-4" style={{width:"100px"}}>
+              <FontAwesomeIcon icon={faTwitterSquare} />
+              
+              <FontAwesomeIcon icon={faInstagram} />
+              
+              <FontAwesomeIcon icon={faLinkedin} />
+            
             </div>
           </div>
 
