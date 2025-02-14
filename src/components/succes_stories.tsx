@@ -7,7 +7,6 @@
 
 // feedback
 import Image from 'next/image'
-import { QuoteIcon } from 'lucide-react'
 
 
 import { motion } from 'framer-motion'
@@ -34,20 +33,11 @@ const testies = [
 ]
 
 
-interface testies {
-    id: String
-    name: String,
-    designation: String,
-    feedback: String
-}
-
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
-    CardTitle,
+    
 } from "@/components/ui/card"
 
 
@@ -55,10 +45,10 @@ export default function SuccessStories() {
     return (
         <>
             <div className='mx-auto my-8 max-w-7xl px-4 text-center md:my-12 lg:my-16'>
-                <h2 className="text-[48px] font-normal text-gray-900">
+                <h2 className="text-[48px] font-medium text-gray-900">
                     Trusted by Founders
                 </h2>
-                <p className="mt-2 text-gray-600 text-[24px] pb-[50px] sm:pb-[100px]">
+                <p className="mt-2 text-gray-600 text-[24px] pb-[50px] sm:pb-[100px] font-medium">
                     We source talent that not just performs, but transforms
                 </p>
             </div>
