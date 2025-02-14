@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import AnimatedCircle from "./animated-circle";
 
 const HeroSection: FC = () => {
   // Data for the top circles
@@ -55,16 +56,9 @@ const HeroSection: FC = () => {
 
       {/* Large Circle Image & Text */}
       <div className="mt-12 flex flex-col items-center text-center">
-        {/* Big vibrant circle image */}
-        <div className="mb-6">
-          <Image
-            src="/assets/images/big_wheel.png"
-            alt="Colorful Wheel"
-            width={300}
-            height={300}
-          // or however you want to size it
-          />
-        </div>
+      <div className="mb-6">
+      <AnimatedCircle></AnimatedCircle>
+      </div>
         {/* Heading */}
         <h2 className="mb-4 text-[48px] font-medium text-gray-900 md:text-3xl">
           We craft teams with <br /> intention, precision, &amp; impact
