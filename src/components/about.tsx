@@ -29,14 +29,13 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="text-gray-600 max-w-2xl mb-8 text-[24px] font-medium"
+        className="text-gray-600 max-w-3xl mb-8 text-[24px] font-medium"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        We source the top 1% professionals who are graduates from <br/>Pakistan's
-        leading universities and experts from global firms.
+        We source the top 1% professionals who are seasoned experts from top global firms and distinguished alumni of Pakistan’s premier universities.
       </motion.p>
 
       <motion.button

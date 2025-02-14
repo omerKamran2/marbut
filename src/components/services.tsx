@@ -2,28 +2,7 @@
 import { FC } from "react";
 
 const ServicesSection: FC = () => {
-  // Our array of services
   const services = [
-    {
-      title: "Results First, Payment Later",
-      description:
-        "Our approach ensures you only pay for successful hires, keeping the process risk-free.",
-      features: [
-        {
-          title: "Zero Upfront Cost",
-          detail: "Pay only when your new hire officially starts.",
-        },
-        {
-          title: "One Time Fee",
-          detail:
-            "Equivalent to the hire's first month's salary. No hidden charges.",
-        },
-        {
-          title: "Guaranteed Success",
-          detail: "If they don't start, you don't pay. Simple!",
-        },
-      ],
-    },
     {
       title: "Direct Hire Model",
       description:
@@ -32,11 +11,12 @@ const ServicesSection: FC = () => {
         {
           title: "Hire the Top 1%",
           detail: "High caliber professionals, fully onboarded",
+          image: "/assets/images/1.svg",
         },
         {
-          title: "Guaranteed Success",
-          detail:
-            "If they don't start, you don't pay. Simple!",
+          title: "0% Risk, 100% Trust",
+          detail: "If they don't start, you don't pay. Simple!",
+          image: "/assets/images/2.svg",
         },
       ],
     },
@@ -48,15 +28,56 @@ const ServicesSection: FC = () => {
         {
           title: "Candidate Screening",
           detail: "We handle everything from resume reviews to interviews and skill assessments.",
+          image: "/assets/images/3.svg",
         },
         {
           title: "Cultural Fit Assessment",
-          detail:
-            "We prioritise candidates who align with your company’s values, work ethic, and vision.",
+          detail: "We source candidates who align with your company’s values, work ethic, and vision.",
+          image: "/assets/images/4.svg",
         },
         {
           title: "Global Time Zone Alignment",
-          detail: "Talent that seamlessly adapts to your time zone requirements and integrates into your workflows.",
+          detail: "We find talent that seamlessly adapts to your time zone requirements and integrates into your workflows.",
+          image: "/assets/images/5.svg",
+        },
+      ],
+    },
+    {
+      title: "Tailored Solutions",
+      description:
+        "We work closely with you to create customised recruitment solutions that align with your goals, growth plans, and long-term vision.",
+      features: [
+        {
+          title: "Fully Bespoke",
+          detail: "Strategic hiring plans built around your specific business needs",
+          image: "/assets/images/6.svg",
+        },
+        {
+          title: "Your Best Interest is our Utmost Priority",
+          detail: "A consultative approach to help you scale with the right talent.",
+          image: "/assets/images/7.svg",
+        },
+        {
+          title: "Hiring Specialists",
+          detail: "Industry specific expertise for specialised roles.",
+          image: "/assets/images/8.svg",
+        },
+      ],
+    },
+    {
+      title: "Results First, Payment Later",
+      description:
+        "Our approach ensures you only pay for successful hires, keeping the process risk-free.",
+      features: [
+        {
+          title: "Zero Upfront Cost",
+          detail: "Pay only when your new hire officially starts.",
+          image: "/assets/images/9.svg",
+        },
+        {
+          title: "One Time Fee",
+          detail: "Equivalent to the hire's first month's salary. No hidden charges.",
+          image: "/assets/images/10.svg",
         },
       ],
     },
@@ -68,35 +89,18 @@ const ServicesSection: FC = () => {
         {
           title: "30 Day Payment Window",
           detail: "Settle payments after the onboarding is complete.",
+          image: "/assets/images/11.svg",
         },
         {
           title: "No Surprises, No Complications",
-          detail:
-            "Just a seamless and fully transparent hiring experience.",
+          detail: "Just a seamless and fully transparent hiring experience.",
+          image: "/assets/images/12.svg",
         },
       ],
     },
-    {
-      title: "Tailored Solutions",
-      description:
-        "We work closely with you to create customised recruitment solutions that align with your goals, growth plans, and long term vision.",
-      features: [
-        {
-          title: "Fully Bespoke",
-          detail: "Strategic hiring plans built around your specific business needs",
-        },
-        {
-          title: "Your Best Interest is our Utmost Priority",
-          detail:
-            "A consultative approach to help you scale with the right talent.",
-        },
-        {
-          title: "Hiring Specialists",
-          detail: "Industry specific expertise for specialised roles.",
-        },
-      ],
-    },
+
   ];
+
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-[100px]">
@@ -123,7 +127,9 @@ const ServicesSection: FC = () => {
                 className="mb-6 flex items-center space-x-4 rounded-lg  p-4"
               >
                 {/* Placeholder for an icon or image */}
-                <div className="h-[160px] w-[160px] flex-shrink-0 rounded bg-gray-200" />
+                {/* <div className="h-[160px] w-[160px] flex-shrink-0 rounded bg-gray-200" /> */}
+                <img src={feature.image} alt={feature.title} className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover" />
+
                 <div>
                   <h3 className="text-[24px] font-thin text-gray-900">
                     {feature.title}
