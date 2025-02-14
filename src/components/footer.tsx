@@ -1,7 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitterSquare, faInstagram, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { icon } from '@fortawesome/fontawesome-svg-core';
