@@ -64,7 +64,8 @@ export default function Header() {
       <Card className="bg-white text-black">
         <div className="mx-auto px-4 md:px-6 lg:px-8">
           <header className="flex h-20 w-full items-center justify-between">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-flex items-center">
+              <img src="/assets/images/Logo.svg" alt="Marbūt Logo" className="h-8 w-8 mr-2" />
               <span className="text-[30px]">Marbūt</span>
             </Link>
 
@@ -124,7 +125,7 @@ export default function Header() {
                 onClick={() => scrollToSection("services")}
                 className={
                   activeSection === "services"
-                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px]" 
+                    ? "text-primary bg-gray-200 h-[32px] rounded-[8px]"
                     : "hover:text-gray-700 h-[32px] rounded-[8px]"
                 }
               >
@@ -155,9 +156,8 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   onClick={() => scrollToSection("about")}
-                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${
-                    activeSection === "about" ? "underline" : ""
-                  }`}
+                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "about" ? "underline" : ""
+                    }`}
                 >
                   About Us
                 </Button>
@@ -165,9 +165,8 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   onClick={() => scrollToSection("success_stories")}
-                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${
-                    activeSection === "success_stories" ? "underline" : ""
-                  }`}
+                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "success_stories" ? "underline" : ""
+                    }`}
                 >
                   Success Stories
                 </Button>
@@ -175,9 +174,8 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   onClick={() => scrollToSection("services")}
-                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${
-                    activeSection === "services" ? "underline" : ""
-                  } mb-4`}
+                  className={`text-white hover:text-gray-300 hover:bg-gray-800 ${activeSection === "services" ? "underline" : ""
+                    } mb-4`}
                 >
                   Services
                 </Button>
