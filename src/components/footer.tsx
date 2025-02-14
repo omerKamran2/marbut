@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 // Footer
 export default function Footer() {
   return (
-    <footer className="bg-white text-black border-t mx-auto px-4 md:px-6 lg:px-8">
+    <footer className="bg-white text-black border-t mx-auto px-4 md:px-6 lg:px-8 max-w-[1680px]">
       {/* We remove 'container' so the footer spans the full width */}
       <div className="px-4 py-8">
         {/* Use a 3-column grid for desktop */}
