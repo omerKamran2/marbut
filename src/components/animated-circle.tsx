@@ -1,19 +1,50 @@
-import { FC, useEffect, useState, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedCircle: FC = () => {
-  const [isClient, setIsClient] = useState(false);
-  const initialAngles = useRef<number[]>([0, (2 * Math.PI) / 3, (4 * Math.PI) / 3]); // Evenly spaced angles
+  const containerRef = useRef<HTMLDivElement>(null);
+  const circlesRef = useRef<(HTMLDivElement | null)[]>(Array(3).fill(null));
+  const initialAngles = [0, (2 * Math.PI) / 3, (4 * Math.PI) / 3];
+  const orbitRadius = 140;
 
   useEffect(() => {
-    setIsClient(true);
+    const rotation = { value: 0 };
+
+    gsap.to(rotation, {
+      value: 360,
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.1, // Reduce scrub value for faster rotation
+      },
+      onUpdate: () => {
+        initialAngles.forEach((baseAngle, index) => {
+          const currentAngle = baseAngle + (rotation.value * Math.PI) / 180;
+          const x = orbitRadius * Math.cos(currentAngle);
+          const y = orbitRadius * Math.sin(currentAngle);
+          const circle = circlesRef.current[index];
+          
+          if (circle) {
+            gsap.set(circle, {
+              x: x,
+              y: y,
+              background: `hsl(${rotation.value}, 100%, 50%)`
+            });
+          }
+        });
+      },
+    });
   }, []);
 
-  if (!isClient) return null;
-
   return (
-    <div className="relative w-[300px] h-[300px] flex items-center justify-center">
-      {/* Gradient Border Circle */}
-      <div className="gradient-border absolute w-[280px] h-[280px] rounded-full overflow-hidden">
+    <div ref={containerRef} className="relative w-[300px] h-[300px] flex items-center justify-center">
+      {/* Gradient Border */}
+      <div className="absolute w-[280px] h-[280px] rounded-full overflow-hidden">
         <div
           className="w-full h-full rounded-full"
           style={{
@@ -25,37 +56,24 @@ const AnimatedCircle: FC = () => {
               #32CD32 288deg,
               #FF6347 360deg
             )`,
-            mask: `radial-gradient(transparent 55%, black 56%)`,
+            mask: `radial-gradient(transparent 55%, black 56%)`
           }}
         />
       </div>
 
-      {/* Three Circles with Dynamic Colors */}
-      {initialAngles.current.map((angle, index) => {
-        const orbitRadius = 140;
-        const x = orbitRadius * Math.cos(angle);
-        const y = orbitRadius * Math.sin(angle);
-
-        // Calculate color based on angle (matching the conic gradient)
-        const hue = (angle * (180 / Math.PI)) % 360; // Convert radian to degrees
-        const bgColor = `hsl(${hue}, 100%, 50%)`; // Use HSL for smooth transition
-
-        return (
-          <div
-            key={index}
-            className="absolute w-12 h-12 rounded-full shadow-lg"
-            style={{
-              backgroundColor: bgColor, // Dynamically set color
-              transform: `translate(
-                calc(-50% + ${x}px),
-                calc(-50% + ${y}px)
-              )`,
-              top: "50%",
-              left: "50%",
-            }}
-          />
-        );
-      })}
+      {/* Rotating Circles */}
+      {initialAngles.map((_, index) => (
+        <div
+          key={index}
+          ref={(el) => { circlesRef.current[index] = el }}
+          className="absolute w-12 h-12 rounded-full shadow-lg"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)"
+          }}
+        />
+      ))}
     </div>
   );
 };
