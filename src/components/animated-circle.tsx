@@ -1,5 +1,4 @@
 import { FC, useEffect, useState, useRef } from "react";
-import gsap from "gsap";
 
 const AnimatedCircle: FC = () => {
   const [isClient, setIsClient] = useState(false);
@@ -8,18 +7,6 @@ const AnimatedCircle: FC = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  useEffect(() => {
-    if (!isClient) return;
-
-    // Animate gradient border rotation only
-    gsap.to(".gradient-border", {
-      rotation: 360,
-      repeat: -1,
-      ease: "none",
-      duration: 6,
-    });
-  }, [isClient]);
 
   if (!isClient) return null;
 
@@ -31,30 +18,34 @@ const AnimatedCircle: FC = () => {
           className="w-full h-full rounded-full"
           style={{
             background: `conic-gradient(
-              #FF6347,
-              #FF7F50,
-              #FFD700,
-              #ADFF2F,
-              #32CD32,
-              #FF6347
+              #FF6347 0deg,
+              #FF7F50 72deg,
+              #FFD700 144deg,
+              #ADFF2F 216deg,
+              #32CD32 288deg,
+              #FF6347 360deg
             )`,
             mask: `radial-gradient(transparent 55%, black 56%)`,
           }}
         />
       </div>
 
-      {/* Three Equally-Spaced Circles */}
-      {["red", "yellow", "blue"].map((color, index) => {
-        const angle = initialAngles.current[index];
+      {/* Three Circles with Dynamic Colors */}
+      {initialAngles.current.map((angle, index) => {
         const orbitRadius = 140;
         const x = orbitRadius * Math.cos(angle);
         const y = orbitRadius * Math.sin(angle);
 
+        // Calculate color based on angle (matching the conic gradient)
+        const hue = (angle * (180 / Math.PI)) % 360; // Convert radian to degrees
+        const bgColor = `hsl(${hue}, 100%, 50%)`; // Use HSL for smooth transition
+
         return (
           <div
-            key={color}
-            className={`absolute w-12 h-12 bg-${color}-400 rounded-full shadow-lg`}
+            key={index}
+            className="absolute w-12 h-12 rounded-full shadow-lg"
             style={{
+              backgroundColor: bgColor, // Dynamically set color
               transform: `translate(
                 calc(-50% + ${x}px),
                 calc(-50% + ${y}px)
