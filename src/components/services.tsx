@@ -125,7 +125,7 @@ const ServicesSection: FC = () => {
           start: "center center",
           // keep the leftCol pinned until the bottom of this section
           // reaches the top of the viewport (so the next section can start)
-          end: "bottom center",
+          end: "+=500",
           pin: leftCol,       // pin the left column
           pinSpacing: true,   // add space so the next sections are pushed down
           scrub: 1,           // tie the timeline's progress to the scroll
@@ -135,7 +135,7 @@ const ServicesSection: FC = () => {
 
       // Animate the left column in from below
       tl.from(leftCol, {
-        y: 500,
+        y: 200,
         opacity: 0,
         duration: 1.5,
         immediateRender: false, // important so it doesn't jump right away
@@ -147,10 +147,10 @@ const ServicesSection: FC = () => {
       tl.from(
         featureItems,
         {
-          y: 50,
-          opacity: 0,
-          stagger: 0.3,
-          duration: 1.5,
+          y: 600,
+          opacity: 0.3,
+          stagger: 0.5,
+          duration: 5,
           ease: "power2.out",
         },
         ">"
