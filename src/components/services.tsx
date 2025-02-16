@@ -122,7 +122,7 @@ const ServicesSection: FC = () => {
         scrollTrigger: {
           trigger: section,
           // start when the center of the section hits the center of the viewport
-          start: "center center",
+          start: "-=300",
           // keep the leftCol pinned until the bottom of this section
           // reaches the top of the viewport (so the next section can start)
           end: "+=500",
@@ -137,7 +137,7 @@ const ServicesSection: FC = () => {
       tl.from(leftCol, {
         y: 200,
         opacity: 0,
-        duration: 1.5,
+        duration: 2,
         immediateRender: false, // important so it doesn't jump right away
         ease: "power2.out",
       });
