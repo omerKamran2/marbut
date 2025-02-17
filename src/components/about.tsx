@@ -17,9 +17,9 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
+    <div className="flex flex-col items-center justify-center px-4 text-center">
       <motion.h1
-        className="text-[72px] font-medium mb-4"
+        className="text-[72px] font-medium pb-[72px]"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -29,7 +29,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="text-gray-600 max-w-3xl mb-8 text-[24px] font-medium"
+        className="text-gray-600 max-w-3xl text-[24px] font-medium pb-[72px]"
         variants={heroVariants}
         initial="hidden"
         animate="visible"

@@ -14,22 +14,22 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section id="about" className="pt-[180px]">
+        <section id="about" className="py-[160px]">
           <About />
         </section>
         <section id="herosection">
           <HeroSection />
         </section>
-        <section id="services">
+        <section id="services" className="pb-[160px]">
           <Services />
         </section>
-        <section id="success_stories">
+        <section id="success_stories pb-[160px]">
           <SuccessStories />
         </section>
-        <section id="roadmap">
+        <section id="roadmap" className="pt-[160px]">
           <RoadMap />
         </section>
-        <section id="contact">
+        <section id="contact" className="py-[160px]">
           <Contact />
         </section>
       </main>

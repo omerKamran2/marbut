@@ -31,7 +31,7 @@ const HeroSection: FC = () => {
   return (
     <section className="mx-auto max-w-4xl px-4 py-8 md:px-6 lg:px-8">
       {/* Top Row: Three Circle Cards */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 pb-[160px]">
         {circleItems.map((item, i) => (
           <Card key={i} className="flex flex-col items-center p-4">
             <CardHeader className="flex flex-col items-center">
@@ -55,17 +55,17 @@ const HeroSection: FC = () => {
       </div>
 
       {/* Large Circle Image & Text */}
-      <div className="mt-12 flex flex-col items-center text-center">
-      <div className="mb-6">
-      <AnimatedCircle></AnimatedCircle>
-      </div>
+      <div className="flex flex-col items-center text-center">
+        <div className="pb-[62px]">
+          <AnimatedCircle></AnimatedCircle>
+        </div>
         {/* Heading */}
-        <h2 className="mb-4 text-[48px] font-medium text-gray-900 md:text-3xl">
+        <h2 className="text-[48px] font-medium text-gray-900 md:text-3xl pb-[32px]">
           We craft teams with <br /> intention, precision, &amp; impact
         </h2>
         {/* Subheading / Paragraph */}
         <p className="max-w-3xl text-[24px] text-gray-600 md:text-lg font-medium">
-          Our talent solutions ensure every hire is a strategic asset <br/>raising your team’s talent density, not just a seat filled.
+          Our talent solutions ensure every hire is a strategic asset <br />raising your team’s talent density, not just a seat filled.
         </p>
       </div>
     </section>

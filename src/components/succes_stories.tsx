@@ -44,16 +44,16 @@ import {
 export default function SuccessStories() {
     return (
         <>
-            <div className='mx-auto my-8 max-w-7xl px-4 text-center md:my-12 lg:my-16'>
-                <h2 className="text-[48px] font-medium text-gray-900">
+            <div className='mx-auto max-w-7xl px-4 text-center'>
+                <h2 className="text-[48px] font-medium text-gray-900 pb-[32px]">
                     Trusted by Founders
                 </h2>
-                <p className="mt-2 text-gray-600 text-[24px] pb-[50px] sm:pb-[100px] font-medium">
+                <p className="mt-2 text-gray-600 text-[24px] pb-[160px] font-medium">
                     We source talent that not just performs, but transforms
                 </p>
             </div>
             <motion.div
-                className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 pb-8 card-container"
+                className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 pb-8 card-container py-[57px]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{

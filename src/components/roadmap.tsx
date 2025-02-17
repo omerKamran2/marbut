@@ -63,11 +63,11 @@ const RoadMap: FC = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-4xl px-4 py-[100px] md:px-6 lg:px-8">
-      <h2 className="my-[100px] text-center text-[48px] font-medium text-gray-900">
+    <section className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
+      <h2 className="text-center text-[48px] font-medium text-gray-900 pb-[160px]">
         Our Hiring Process
       </h2>
-      <div className="space-y-8">
+      <div className="space-y-[24px] pt-[32px]">
         {steps.map((step, index) => (
           <div key={index} className="flex items-center space-x-4">
             {/* Placeholder for step image/thumbnail */}
