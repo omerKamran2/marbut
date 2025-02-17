@@ -37,7 +37,7 @@ import {
     Card,
     CardContent,
     CardHeader,
-    
+
 } from "@/components/ui/card"
 
 
@@ -52,26 +52,26 @@ export default function SuccessStories() {
                     We source talent that not just performs, but transforms
                 </p>
             </div>
-            <motion.div
-                className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 pb-8 card-container py-[57px]"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 50
-                }}
-            >
+            <motion.div // For small screens: flex row + horizontal scroll // For md and above: switch to a normal 3-column grid
+                className="
+                    flex 
+                    gap-4 
+                    overflow-x-auto 
+                    pb-8 
+                    card-container 
+                    py-[57px]
+
+                    md:grid 
+                    md:grid-cols-3 
+                    md:gap-8 
+                    md:overflow-visible
+                " initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ type: 'spring', stiffness: 50 }}>
                 {testimonials.map(test => (
-                    <Card key={test.id}>
+                    <Card key={test.id} className="flex-none w-[90%] md:w-auto">
                         <CardHeader>
                             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                                <Image
-                                    className="rounded-full shadow-lg mt-6"
-                                    src="/cheema.jpg"
-                                    width={50}
-                                    height={50}
-                                    alt={`${test.name}'s profile picture`}
-                                />
+                                <Image className="rounded-full shadow-lg mt-6" src="/cheema.jpg" width={50} height={50} alt={`${test.name}'s
+                                profile picture`} />
                                 <div className="text-center sm:text-left pt-4">
                                     <h3 className="text-[24px] font-medium">{test.name}</h3>
                                     <p className="text-[16px] text-muted-foreground font-medium">{test.designation}</p>
@@ -80,7 +80,8 @@ export default function SuccessStories() {
                         </CardHeader>
                         <CardContent>
                             <div className="relative">
-                                {/* <QuoteIcon className="absolute top-0 left-0 text-muted-foreground/50 h-8 w-8 -translate-x-2 -translate-y-2" />
+                                {/*
+                                <QuoteIcon className="absolute top-0 left-0 text-muted-foreground/50 h-8 w-8 -translate-x-2 -translate-y-2" />
                                 <QuoteIcon className="absolute bottom-0 right-0 text-muted-foreground/50 h-8 w-8 rotate-180" /> */}
                                 <blockquote className="py-4 text-[14px] text-muted-foreground font-medium">
                                     {test.feedback}
