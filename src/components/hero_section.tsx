@@ -60,11 +60,11 @@ const HeroSection: FC = () => {
           <AnimatedCircle></AnimatedCircle>
         </div>
         {/* Heading */}
-        <h2 className="text-[48px] font-medium text-gray-900 md:text-3xl pb-[32px]">
+        <h2 className="text-[48px] font-medium text-[#1E1E1E] md:text-3xl pb-[32px]">
           We craft teams with <br /> intention, precision, &amp; impact
         </h2>
         {/* Subheading / Paragraph */}
-        <p className="max-w-3xl text-[24px] text-gray-600 md:text-lg font-medium">
+        <p className="max-w-3xl text-[24px] text-[#757575] md:text-lg font-medium">
           Our talent solutions ensure every hire is a strategic asset <br />raising your team’s talent density, not just a seat filled.
         </p>
       </div>

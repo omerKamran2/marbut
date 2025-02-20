@@ -45,10 +45,10 @@ export default function SuccessStories() {
     return (
         <>
             <div className='mx-auto max-w-7xl px-4 text-center'>
-                <h2 className="text-[48px] font-medium text-gray-900 pb-[32px]">
+                <h2 className="text-[48px] font-medium text-[#1E1E1E] pb-[32px]">
                     Trusted by Founders
                 </h2>
-                <p className="mt-2 text-gray-600 text-[24px] pb-[160px] font-medium">
+                <p className="mt-2 text-[#757575] text-[24px] pb-[160px] font-medium">
                     We source talent that not just performs, but transforms
                 </p>
             </div>
@@ -73,8 +73,8 @@ export default function SuccessStories() {
                                 <Image className="rounded-full shadow-lg mt-6" src="/cheema.jpg" width={50} height={50} alt={`${test.name}'s
                                 profile picture`} />
                                 <div className="text-center sm:text-left pt-4">
-                                    <h3 className="text-[24px] font-medium">{test.name}</h3>
-                                    <p className="text-[16px] text-muted-foreground font-medium">{test.designation}</p>
+                                    <h3 className="text-[24px] font-medium text-[#1E1E1E]">{test.name}</h3>
+                                    <p className="text-[16px] text-[#757575] font-medium">{test.designation}</p>
                                 </div>
                             </div>
                         </CardHeader>
@@ -83,8 +83,8 @@ export default function SuccessStories() {
                                 {/*
                                 <QuoteIcon className="absolute top-0 left-0 text-muted-foreground/50 h-8 w-8 -translate-x-2 -translate-y-2" />
                                 <QuoteIcon className="absolute bottom-0 right-0 text-muted-foreground/50 h-8 w-8 rotate-180" /> */}
-                                <blockquote className="py-4 text-[14px] text-muted-foreground font-medium">
-                                    {test.feedback}
+                                <blockquote className="py-4 text-[14px] text-[#757575] font-medium">
+                                    "{test.feedback}"
                                 </blockquote>
                             </div>
                         </CardContent>

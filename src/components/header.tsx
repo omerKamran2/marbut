@@ -20,7 +20,7 @@ export default function Header() {
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
+          const id = entry.target.getAttribute("id");   
           if (id) setActiveSection(id);
         }
       });

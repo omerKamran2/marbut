@@ -170,10 +170,10 @@ const ServicesSection: FC = () => {
         >
           {/* Left Column */}
           <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
-            <h2 className="mb-10 text-[48px] font-medium text-gray-900">
+            <h2 className="mb-10 text-[48px] font-medium [#1E1E1E]">
               {service.title}
             </h2>
-            <p className="text-[24px] text-gray-700 font-medium">
+            <p className="text-[24px] text-[#757575] font-medium">
               {service.description}
             </p>
           </div>
@@ -191,10 +191,10 @@ const ServicesSection: FC = () => {
                   className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover"
                 />
                 <div>
-                  <h3 className="text-[24px] font-thin text-gray-900 font-medium">
+                  <h3 className="text-[24px] font-thin text-[#1E1E1E] font-medium">
                     {feature.title}
                   </h3>
-                  <p className="mt-1 text-gray-700 text-[16px] font-medium">
+                  <p className="mt-1 text-[#757575] text-[16px] font-medium">
                     {feature.detail}
                   </p>
                 </div>

@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Marbut text */}
             <Link href="/" className="inline-flex items-center">
               <img src="/assets/images/Logo.svg" alt="Marbūt Logo" className="h-8 w-8 mr-2" />
-              <span className="text-[40px] font-medium">Marbūt</span>
+              <span className="text-[40px] font-medium text-[#1E1E1E]">Marbūt</span>
             </Link>
 
             {/* Icons under "Marbut" */}
@@ -40,9 +40,9 @@ export default function Footer() {
 
           {/* Column 2: Useful Links */}
           <div className="space-y-4">
-            <h3 className="text-[16px] font-normal">Useful Links</h3>
+            <h3 className="text-[16px] font-normal text-[#1E1E1E]">Useful Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#" className="hover:underline text-[14px] text-gray-500">
+              <Link href="#" className="hover:underline text-[14px] text-[#757575]">
                 FAQs
               </Link>
             </nav>
@@ -50,14 +50,14 @@ export default function Footer() {
 
           {/* Column 3: Contact Us */}
           <div className="space-y-4">
-            <h3 className="text-[16px] font-normal">Contact Us</h3>
-            <p className="text-[14px] text-gray-500">contact@marbut.com</p>
+            <h3 className="text-[16px] font-normal text-[#1E1E1E]">Contact Us</h3>
+            <p className="text-[14px] text-[#757575]">contact@marbut.com</p>
           </div>
         </div>
 
         {/* Bottom Row */}
         <div className="mt-4 flex flex-col justify-between gap-4 border-t pt-4 md:flex-row">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-[#757575]">
             &copy; 2024 Marbut. All Rights Reserved.
           </p>
         </div>
