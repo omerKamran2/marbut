@@ -109,52 +109,55 @@ const ServicesSection: FC = () => {
   ];
 
   useEffect(() => {
-    sectionsRef.current.forEach((section) => {
+    sectionsRef.current.forEach((section, index) => {
       const leftCol = section.querySelector<HTMLElement>(".left-col");
       const rightCol = section.querySelector<HTMLElement>(".right-col");
+      const featureItems = rightCol?.querySelectorAll<HTMLElement>(".feature-item") || [];
 
       if (!leftCol || !rightCol) return;
 
-      const featureItems = rightCol.querySelectorAll(".feature-item");
+      // Calculate animation parameters based on viewport height
+      const viewportHeight = window.innerHeight;
+      const sectionHeight = section.offsetHeight;
+      const rightColHeight = rightCol.offsetHeight;
 
-      // Create the timeline for this section
+      // Create master timeline for the section
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          // start when the center of the section hits the center of the viewport
-          start: "-=300",
-          // keep the leftCol pinned until the bottom of this section
-          // reaches the top of the viewport (so the next section can start)
-          end: "+=500",
-          pin: leftCol,       // pin the left column
-          pinSpacing: true,   // add space so the next sections are pushed down
-          scrub: 1,           // tie the timeline's progress to the scroll
-          markers: false,     // or true for debugging
-        },
+          start: `top+=${viewportHeight * 0.25} center`,
+          end: () => `+=${sectionHeight + rightColHeight}`,
+          scrub: 1.5,
+          pin: true,
+          anticipatePin: 1,
+          markers: false, // Set to true for debugging
+        }
       });
 
-      // Animate the left column in from below
+      // Left column animation
       tl.from(leftCol, {
         y: 200,
         opacity: 0,
-        duration: 2,
-        immediateRender: false, // important so it doesn't jump right away
-        ease: "power2.out",
+        duration: 1.2,
+        ease: "power4.out"
       });
 
-      // Animate the right column's features with a stagger
-      // We use a label (">0.5") so this starts 0.5s *after* the leftCol animation
-      tl.from(
-        featureItems,
-        {
-          y: 600,
-          opacity: 0.3,
-          stagger: 0.5,
-          duration: 5,
-          ease: "power2.out",
-        },
-        ">"
-      );
+      // Right column features animation
+      tl.from(featureItems, {
+        y: 400,
+        opacity: 0,
+        stagger: 0.3,
+        duration: 1.5,
+        ease: "power3.out"
+      }, "-=0.5");
+
+      // Exit animation for both columns
+      tl.to([leftCol, rightCol], {
+        y: -200,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power4.in"
+      }, "+=0.2");
     });
   }, []);
 
@@ -168,9 +171,9 @@ const ServicesSection: FC = () => {
           }}
           className="service-section mb-32 flex flex-col md:flex-row"
         >
-          {/* Left Column */}
+          {/* Left Column (keep your existing JSX structure) */}
           <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
-            <h2 className="mb-10 text-[48px] font-medium [#1E1E1E]">
+          <h2 className="mb-10 text-[48px] font-medium text-[#1E1E1E]">
               {service.title}
             </h2>
             <p className="text-[24px] text-[#757575] font-medium">
@@ -178,9 +181,9 @@ const ServicesSection: FC = () => {
             </p>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column (keep your existing JSX structure) */}
           <div className="right-col mt-6 w-full md:mt-0 md:w-1/2">
-            {service.features.map((feature, i) => (
+          {service.features.map((feature, i) => (
               <div
                 key={i}
                 className="feature-item flex items-center space-x-4 rounded-lg"
