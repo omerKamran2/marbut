@@ -14,7 +14,8 @@ const AnimatedCircle: FC = () => {
   const initialAngles = [0, (2 * Math.PI) / 3, (4 * Math.PI) / 3];
 
   // Distance from center for each orbiting circle
-  const orbitRadius = 180;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const orbitRadius = isMobile ? 125 : 180;
 
   useEffect(() => {
     // We'll rotate from 0 -> 360 as the user scrolls the page
@@ -58,10 +59,11 @@ const AnimatedCircle: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-[400px] h-[400px] flex items-center justify-center"
+      // Mobile: 300x300, md+: 400x400
+      className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center"
     >
-      {/* The Color Wheel */}
-      <div className="absolute w-[400px] h-[400px] rounded-full overflow-hidden">
+      {/* The Color Wheel: also changes size on md+ */}
+      <div className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden">
         <div
           className="w-full h-full rounded-full"
           style={{
@@ -79,22 +81,29 @@ const AnimatedCircle: FC = () => {
         />
       </div>
 
-      {/* Center Gradient Circle - adjust size via w- and h- classes */}
+      {/* Center Gradient Circle - smaller on mobile, bigger on md+ */}
       <div
-        className="absolute w-[45px] h-[45px] rounded-full"
+        className="absolute rounded-full"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, white 0%, #808080 100%)',
+          width: "35px",
+          height: "35px",
+          background: "radial-gradient(circle at 50% 50%, white 0%, #808080 100%)",
         }}
       />
+      {/* If you want to scale it on md+:
+          className="absolute rounded-full md:w-[45px] md:h-[45px]"
+          and so on. 
+      */}
 
-      {/* Orbiting Circles */}
+      {/* Orbiting Circles - smaller on mobile, bigger on md+ */}
       {initialAngles.map((_, index) => (
         <div
           key={index}
           ref={(el) => {
             circlesRef.current[index] = el;
           }}
-          className="absolute w-[101px] h-[101px] rounded-full shadow-lg border-2 border-white" // Adjust border width via border-[npx]
+          // Mobile ~80px, md ~101px
+          className="absolute w-[80px] h-[80px] md:w-[101px] md:h-[101px] rounded-full shadow-lg border-2 border-white"
           style={{
             top: "50%",
             left: "50%",
