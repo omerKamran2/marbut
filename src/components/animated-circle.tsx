@@ -14,7 +14,7 @@ const AnimatedCircle: FC = () => {
   const initialAngles = [0, (2 * Math.PI) / 3, (4 * Math.PI) / 3];
 
   // Distance from center for each orbiting circle
-  const orbitRadius = 140;
+  const orbitRadius = 180;
 
   useEffect(() => {
     // We'll rotate from 0 -> 360 as the user scrolls the page
@@ -58,15 +58,13 @@ const AnimatedCircle: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-[300px] h-[300px] flex items-center justify-center"
+      className="relative w-[400px] h-[400px] flex items-center justify-center"
     >
       {/* The Color Wheel */}
-      <div className="absolute w-[280px] h-[280px] rounded-full overflow-hidden">
+      <div className="absolute w-[400px] h-[400px] rounded-full overflow-hidden">
         <div
           className="w-full h-full rounded-full"
           style={{
-            // 1) "from -90deg" makes 0° at the top, 90° on the right, 180° at the bottom, etc.
-            // 2) We use hsl(0..360) stops to perfectly match the .from() circle angles
             background: `conic-gradient(from -90deg,
               hsl(0,100%,50%) 0deg,
               hsl(60,100%,50%) 60deg,
@@ -76,11 +74,18 @@ const AnimatedCircle: FC = () => {
               hsl(300,100%,50%) 300deg,
               hsl(360,100%,50%) 360deg
             )`,
-            // Adjust these percentages to change ring thickness
             mask: `radial-gradient(transparent 50%, black 51%)`,
           }}
         />
       </div>
+
+      {/* Center Gradient Circle - adjust size via w- and h- classes */}
+      <div
+        className="absolute w-[45px] h-[45px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle at 50% 50%, white 0%, #808080 100%)',
+        }}
+      />
 
       {/* Orbiting Circles */}
       {initialAngles.map((_, index) => (
@@ -89,7 +94,7 @@ const AnimatedCircle: FC = () => {
           ref={(el) => {
             circlesRef.current[index] = el;
           }}
-          className="absolute w-12 h-12 rounded-full shadow-lg"
+          className="absolute w-[101px] h-[101px] rounded-full shadow-lg border-2 border-white" // Adjust border width via border-[npx]
           style={{
             top: "50%",
             left: "50%",
