@@ -93,8 +93,11 @@ const HeroSection: FC = () => {
           intension, precision, & impact
         </h2>
         {/* Subheading / Paragraph */}
-        <p className="max-w-3xl text-[24px] text-[#757575] md:text-lg font-medium">
+        <p className="hidden md:block max-w-3xl text-[24px] text-[#757575] md:text-lg font-medium">
           Our talent solutions ensure every hire is a strategic asset <br />raising your team’s talent density, not just a seat filled.
+        </p>
+        <p className="block md:hidden max-w-3xl text-[20px] md:text-[24px] text-[#757575] md:text-lg font-medium">
+          Our talent solutions ensure every hire is a strategic asset raising your team’s talent density, not just a seat filled.
         </p>
       </div>
     </section>

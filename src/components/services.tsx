@@ -109,55 +109,78 @@ const ServicesSection: FC = () => {
   ];
 
   useEffect(() => {
-    sectionsRef.current.forEach((section, index) => {
-      const leftCol = section.querySelector<HTMLElement>(".left-col");
-      const rightCol = section.querySelector<HTMLElement>(".right-col");
-      const featureItems = rightCol?.querySelectorAll<HTMLElement>(".feature-item") || [];
+    /**
+     * 1) For screens < 768px (mobile), do nothing => no animations.
+     * 2) For screens >= 768px, run your existing pinned/scroll animations.
+     */
+    ScrollTrigger.matchMedia({
 
-      if (!leftCol || !rightCol) return;
+      // (A) Disable on mobile
+      "(max-width: 767px)": function() {
+        // Do nothing => no GSAP timeline for mobile
+      },
 
-      // Calculate animation parameters based on viewport height
-      const viewportHeight = window.innerHeight;
-      const sectionHeight = section.offsetHeight;
-      const rightColHeight = rightCol.offsetHeight;
+      // (B) Enable on tablet and above
+      "(min-width: 768px)": () => {
+        sectionsRef.current.forEach((section) => {
+          const leftCol = section.querySelector<HTMLElement>(".left-col");
+          const rightCol = section.querySelector<HTMLElement>(".right-col");
+          const featureItems = rightCol?.querySelectorAll<HTMLElement>(".feature-item") || [];
 
-      // Create master timeline for the section
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: `top+=${viewportHeight * 0.25} center`,
-          end: () => `+=${sectionHeight + rightColHeight}`,
-          scrub: 1.5,
-          pin: true,
-          anticipatePin: 1,
-          markers: false, // Set to true for debugging
-        }
-      });
+          if (!leftCol || !rightCol) return;
 
-      // Left column animation
-      tl.from(leftCol, {
-        y: 200,
-        opacity: 0.2,
-        duration: 1.2,
-        ease: "power4.out"
-      });
+          // Same logic as before
+          const viewportHeight = window.innerHeight;
+          const sectionHeight = section.offsetHeight;
+          const rightColHeight = rightCol.offsetHeight;
 
-      // Right column features animation
-      tl.from(featureItems, {
-        y: 400,
-        opacity: 0,
-        stagger: 0.3,
-        duration: 1.5,
-        ease: "power3.out"
-      }, "-=0.5");
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: `top+=${viewportHeight * 0.25} center`,
+              end: () => `+=${sectionHeight + rightColHeight}`,
+              scrub: 1.5,
+              pin: true,
+              anticipatePin: 1,
+              markers: false,
+            },
+          });
 
-      // Exit animation for both columns
-      tl.to([leftCol, rightCol], {
-        y: -200,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power4.in"
-      }, "+=0.2");
+          // Left column animation
+          tl.from(leftCol, {
+            y: 200,
+            opacity: 0.2,
+            duration: 1.2,
+            ease: "power4.out",
+          });
+
+          // Right column features
+          tl.from(
+            featureItems,
+            {
+              y: 400,
+              opacity: 0,
+              stagger: 0.3,
+              duration: 1.5,
+              ease: "power3.out",
+            },
+            "-=0.5"
+          );
+
+          // Exit animation
+          tl.to(
+            [leftCol, rightCol],
+            {
+              y: -200,
+              opacity: 0,
+              duration: 1.2,
+              ease: "power4.in",
+            },
+            "+=0.2"
+          );
+        });
+      },
+
     });
   }, []);
 
@@ -171,32 +194,51 @@ const ServicesSection: FC = () => {
           }}
           className="service-section flex flex-col md:flex-row"
         >
-          {/* Left Column (keep your existing JSX structure) */}
-          <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
-          <h2 className="mb-10 text-[48px] font-medium text-[#1E1E1E] leading-tight">
+          {/* Left Column */}
+          <div
+            className="
+              left-col 
+              mt-6 
+              w-full 
+              md:w-1/2 
+              md:pr-10 
+              flex 
+              flex-col 
+              items-center  md:items-start 
+              text-center   md:text-left
+            "
+          >
+            {/* Service Title: 24px on mobile, 48px on md+ */}
+            <h2 className="mb-10 font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
               {service.title}
             </h2>
-            <p className="text-[24px] text-[#757575] font-medium">
+            {/* Service Description: 20px on mobile, 24px on md+ */}
+            <p className="text-[#757575] font-medium text-[20px] md:text-[24px]">
               {service.description}
             </p>
           </div>
 
-          {/* Right Column (keep your existing JSX structure) */}
+          {/* Right Column */}
           <div className="right-col mt-6 w-full md:mt-0 md:w-1/2">
-          {service.features.map((feature, i) => (
+            {service.features.map((feature, i) => (
               <div
                 key={i}
                 className="feature-item flex items-center space-x-4 rounded-lg"
               >
+                {/* Image: 100px on mobile, 160px on md+ */}
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="h-[160px] w-[160px] flex-shrink-0 rounded object-cover"
+                  className="h-[100px] w-[100px] md:h-[160px] md:w-[160px] flex-shrink-0 rounded object-cover"
                 />
                 <div>
-                  <h3 className="text-[24px] font-thin text-[#1E1E1E] font-medium">
+                  {/* Feature Title: 24px on mobile (unchanged), 
+                      if you need it bigger on desktop, do e.g. md:text-[28px] */}
+                  <h3 className="text-[#1E1E1E] font-medium text-[24px] font-thin">
                     {feature.title}
                   </h3>
+                  {/* Feature Description: 16px on both mobile & desktop (already 16). 
+                      If you want a bigger size on desktop, add md:text-[18px] etc. */}
                   <p className="mt-1 text-[#757575] text-[16px] font-medium">
                     {feature.detail}
                   </p>
