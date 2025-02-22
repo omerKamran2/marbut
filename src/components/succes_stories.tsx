@@ -45,7 +45,7 @@ export default function SuccessStories() {
     return (
         <>
             <div className='mx-auto max-w-7xl px-4 text-center'>
-                <h2 className="text-[48px] font-medium text-[#1E1E1E] pb-[32px]">
+                <h2 className="text-[48px] font-medium text-[#1E1E1E] pb-[32px] leading-tight">
                     Trusted by Founders
                 </h2>
                 <p className="mt-2 text-[#757575] text-[24px] pb-[160px] font-medium">

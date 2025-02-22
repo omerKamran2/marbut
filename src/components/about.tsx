@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col items-center justify-center px-4 text-center">
       <motion.h1
-        className="text-[72px] font-medium pb-[72px] text-[#1E1E1E]"
+        className="text-[72px] font-medium pb-[72px] text-[#1E1E1E] leading-tight"
         variants={heroVariants}
         initial="hidden"
         animate="visible"

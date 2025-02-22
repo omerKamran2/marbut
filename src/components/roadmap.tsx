@@ -76,7 +76,7 @@ const RoadMap: FC = () => {
 
             {/* Step Text */}
             <div>
-              <h2 className="mb-1 font-medium text-[#1E1E1E] text-[24px]">
+              <h2 className="mb-1 font-medium text-[#1E1E1E] text-[24px] leading-tight">
                 {index + 1}. {step.title}
               </h2>
               <p className="text-[#757575] text-[16px] font-medium">{step.description}</p>

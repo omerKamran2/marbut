@@ -173,7 +173,7 @@ const ServicesSection: FC = () => {
         >
           {/* Left Column (keep your existing JSX structure) */}
           <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
-          <h2 className="mb-10 text-[48px] font-medium text-[#1E1E1E]">
+          <h2 className="mb-10 text-[48px] font-medium text-[#1E1E1E] leading-tight">
               {service.title}
             </h2>
             <p className="text-[24px] text-[#757575] font-medium">
