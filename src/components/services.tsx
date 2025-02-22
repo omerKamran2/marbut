@@ -137,7 +137,7 @@ const ServicesSection: FC = () => {
       // Left column animation
       tl.from(leftCol, {
         y: 200,
-        opacity: 0,
+        opacity: 0.2,
         duration: 1.2,
         ease: "power4.out"
       });
@@ -169,7 +169,7 @@ const ServicesSection: FC = () => {
           ref={(el) => {
             if (el) sectionsRef.current[idx] = el;
           }}
-          className="service-section mb-32 flex flex-col md:flex-row"
+          className="service-section flex flex-col md:flex-row"
         >
           {/* Left Column (keep your existing JSX structure) */}
           <div className="left-col mt-6 w-full md:w-1/2 md:pr-10">
