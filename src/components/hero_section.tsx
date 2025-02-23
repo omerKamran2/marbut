@@ -29,9 +29,9 @@ const HeroSection: FC = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-4xl px-4 py-8 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-4xl px-4 md:px-6">
       {/* Top Row: Three Circle Cards */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 pb-[160px]">
+      <div className="grid grid-cols-1 gap-[16px] md:grid-cols-3 pb-[70px] md:pb-[160px]">
         {circleItems.map((item, i) => (
           <Card
             key={i}

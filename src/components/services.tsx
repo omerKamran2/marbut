@@ -185,7 +185,7 @@ const ServicesSection: FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-[100px]">
+    <div className="mx-auto max-w-7xl px-5 lg:px-[100px]">
       {services.map((service, idx) => (
         <section
           key={idx}
@@ -197,8 +197,7 @@ const ServicesSection: FC = () => {
           {/* Left Column */}
           <div
             className="
-              left-col 
-              mt-6 
+              left-col
               w-full 
               md:w-1/2 
               md:pr-10 
@@ -209,21 +208,21 @@ const ServicesSection: FC = () => {
             "
           >
             {/* Service Title: 24px on mobile, 48px on md+ */}
-            <h2 className="mb-10 font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
+            <h2 className="mb-[36px] pt-[96px] font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
               {service.title}
             </h2>
             {/* Service Description: 20px on mobile, 24px on md+ */}
-            <p className="text-[#757575] font-medium text-[20px] md:text-[24px]">
+            <p className=" text-[#757575] font-medium text-[20px] md:text-[24px]">
               {service.description}
             </p>
           </div>
 
           {/* Right Column */}
-          <div className="right-col mt-6 w-full md:mt-0 md:w-1/2">
+          <div className="right-col w-full md:mt-0 md:w-1/2">
             {service.features.map((feature, i) => (
               <div
                 key={i}
-                className="feature-item flex items-center space-x-4 rounded-lg"
+                className="feature-item flex items-center space-x-4 rounded-lg mt-[56px] md:mt-[10px]"
               >
                 {/* Image: 100px on mobile, 160px on md+ */}
                 <img
