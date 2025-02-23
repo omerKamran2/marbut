@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Column 3: Contact Us */}
           <div className="space-y-4">
             <h3 className="text-[16px] font-normal text-[#1E1E1E]">Contact Us</h3>
-            <p className="text-[14px] text-[#757575]">contact@marbut.com</p>
+            <a href="mailto:contact@marbut.info" className="text-[14px] text-[#757575]">contact@marbut.info</a>
           </div>
         </div>
 

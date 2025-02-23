@@ -45,7 +45,7 @@ const ServicesSection: FC = () => {
         {
           title: "Global Time Zone Alignment",
           detail:
-            "We find talent that seamlessly adapts to your time zone requirements...",
+            "We find talent that seamlessly adapts to your time zone requirements and integrates into your workflows.",
           image: "/assets/images/5.svg",
         },
       ],
