@@ -64,10 +64,10 @@ const RoadMap: FC = () => {
 
   return (
     <section className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-      <h2 className="text-center text-[32px] md:text-[48px] font-medium text-[#1E1E1E] pb-[160px]">
+      <h2 className="text-center text-[32px] md:text-[48px] font-medium text-[#1E1E1E] pb-[32px] md:pb-[160px]">
         Our Hiring Process
       </h2>
-      <div className="space-y-[24px] pt-[32px]">
+      <div className="space-y-[42px] md:space-y-[24px] pt-[32px]">
         {steps.map((step, index) => (
           <div key={index} className="flex items-center space-x-4">
             {/* Placeholder for step image/thumbnail */}

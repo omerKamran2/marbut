@@ -48,7 +48,7 @@ export default function SuccessStories() {
                 <h2 className="text-[32px] md:text-[48px] font-medium text-[#1E1E1E] pb-[32px] leading-tight">
                     Trusted by Founders
                 </h2>
-                <p className="mt-2 text-[#757575] text-[20px] md:text-[24px] pb-[160px] font-medium">
+                <p className="mt-2 text-[#757575] text-[20px] md:text-[24px] pb-[89px] md:pb-[160px] font-medium">
                     We source talent that not just performs, but transforms
                 </p>
             </div>
@@ -59,7 +59,6 @@ export default function SuccessStories() {
                     overflow-x-auto 
                     pb-8 
                     card-container 
-                    py-[57px]
 
                     md:grid 
                     md:grid-cols-3 

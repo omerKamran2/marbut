@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col items-center justify-center px-4 text-center">
       <motion.h1
-        className="text-[56px] md:text-[72px] font-medium pb-[72px] text-[#1E1E1E] leading-tight"
+        className="text-[56px] md:text-[72px] font-medium pb-[32px] md:pb-[72px] text-[#1E1E1E] leading-tight"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -29,13 +29,23 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="text-gray-600 max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px] text-[#757575]"
+        className="hidden md:block text-gray-600 max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px] text-[#757575]"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, delay: 0.1 }}
       >
         We source the top 1% professionals who are seasoned experts from top global firms and distinguished alumni of Pakistan’s premier universities.
+      </motion.p>
+
+      <motion.p
+        className="block md:hidden text-gray-600 max-w-4xl text-[20px] md:text-[24px] font-medium pb-[48px] text-[#757575]"
+        variants={heroVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        Each talent is unique, contributing to a larger, harmonious composition.
       </motion.p>
 
       <motion.button
