@@ -11,7 +11,7 @@ const ServicesSection: FC = () => {
     {
       title: "Direct Hire Model",
       description:
-        "Once we connect you with the right talent, they become a part of your team...",
+        "Once we connect you with the right talent, they become a part of your team, fully integrated into your payroll, benefits, and compliance system.",
       features: [
         {
           title: "Hire the Top 1%",
@@ -45,7 +45,7 @@ const ServicesSection: FC = () => {
         {
           title: "Global Time Zone Alignment",
           detail:
-            "We find talent that seamlessly adapts to your time zone requirements...",
+            "We find talent that seamlessly adapts to your time zone requirements and integrates into your workflows.",
           image: "/assets/images/5.svg",
         },
       ],
@@ -53,7 +53,7 @@ const ServicesSection: FC = () => {
     {
       title: "Tailored Solutions",
       description:
-        "We work closely with you to create customised recruitment solutions...",
+        "We work closely with you to create customised recruitment solutions that align with your goals, growth plans, and long term vision.",
       features: [
         {
           title: "Fully Bespoke",
