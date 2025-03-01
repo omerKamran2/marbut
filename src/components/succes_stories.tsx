@@ -16,19 +16,22 @@ const testimonials = [
         id: "1",
         name: "Ryan Gartin",
         designation: "VP @ Trails Offroad ",
-        feedback: "Such a wonderfully smooth process. Working with the founder was easy, his communication skills were excellent, and he really strived to understand what we were looking for. The candidates were top-notch. I continue to be impressed with the candidate we hired and will definitely utilize Marbūt's services again in the future as we grow our team."
+        feedback: "Such a wonderfully smooth process. Working with the founder was easy, his communication skills were excellent, and he really strived to understand what we were looking for. The candidates were top-notch. I continue to be impressed with the candidate we hired and will definitely utilize Marbūt's services again in the future as we grow our team.",
+        image: "/assets/images/person1.jpeg"
     },
     {
         id: "2",
         name: "Alex Plavljanic ",
         designation: "Founder @ TalentHaul",
-        feedback: "Partnering with Marbut has been an outstanding experience. Their ability to source exceptional talent with remarkable efficiency is truly impressive. Every recommendation has been a perfect fit, demonstrating their deep understanding of my requirements. The professionalism and dedication of Muhammad, the founder, make Marbut a trusted and invaluable partner for my agency. Highly recommended!"
+        feedback: "Partnering with Marbut has been an outstanding experience. Their ability to source exceptional talent with remarkable efficiency is truly impressive. Every recommendation has been a perfect fit, demonstrating their deep understanding of my requirements. The professionalism and dedication of Muhammad, the founder, make Marbut a trusted and invaluable partner for my agency. Highly recommended!",
+        image: "/assets/images/person2.jpeg"
     },
     {
         id: "3",
         name: "Noman Khan",
         designation: "Managing Partner @ Young Friends Partnet Ltd.",
-        feedback: "Marbut has been instrumental in helping my firm find exceptional remote talent from Pakistan. The account executives they sourced have exceeded expectations in both skill and professionalism. Muhammad demonstrates an unwavering commitment to delivering top-tier candidates. I highly recommend Marbut for anyone seeking reliable and efficient recruitment services."
+        feedback: "Marbut has been instrumental in helping my firm find exceptional remote talent from Pakistan. The account executives they sourced have exceeded expectations in both skill and professionalism. Muhammad demonstrates an unwavering commitment to delivering top-tier candidates. I highly recommend Marbut for anyone seeking reliable and efficient recruitment services.",
+        image: "/assets/images/person3.jpeg"
     }
 ]
 
@@ -69,7 +72,7 @@ export default function SuccessStories() {
                     <Card key={test.id} className="flex-none w-[90%] md:w-auto">
                         <CardHeader>
                             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                                <Image className="rounded-full shadow-lg mt-6" src="/cheema.jpg" width={50} height={50} alt={`${test.name}'s
+                                <Image className="rounded-full shadow-lg mt-6" src={test.image} width={50} height={50} alt={`${test.name}'s
                                 profile picture`} />
                                 <div className="text-center sm:text-left pt-4">
                                     <h3 className="text-[24px] font-medium text-[#1E1E1E]">{test.name}</h3>
