@@ -34,13 +34,13 @@ const ServicesSection: FC = () => {
           title: "Candidate Screening",
           detail:
             "We handle everything from resume reviews to interviews and skill assessments.",
-          image: "/assets/images/3.svg",
+          image: "/assets/images/candidate_screening.png",
         },
         {
           title: "Cultural Fit Assessment",
           detail:
             "We source candidates who align with your company’s values, work ethic, and vision.",
-          image: "/assets/images/4.svg",
+          image: "/assets/images/cultural_fit_assessment.png",
         },
         {
           title: "Global Time Zone Alignment",
@@ -58,7 +58,7 @@ const ServicesSection: FC = () => {
         {
           title: "Fully Bespoke",
           detail: "Strategic hiring plans built around your specific business needs",
-          image: "/assets/images/6.svg",
+          image: "/assets/images/fully_bespoke.png",
         },
         {
           title: "Your Best Interest is our Utmost Priority",
@@ -208,7 +208,7 @@ const ServicesSection: FC = () => {
             "
           >
             {/* Service Title: 24px on mobile, 48px on md+ */}
-            <h2 className="mb-[36px] pt-[96px] font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
+            <h2 className="mb-[36px] pt-[96px] md:pt-[20px] font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
               {service.title}
             </h2>
             {/* Service Description: 20px on mobile, 24px on md+ */}
@@ -222,7 +222,7 @@ const ServicesSection: FC = () => {
             {service.features.map((feature, i) => (
               <div
                 key={i}
-                className="feature-item flex items-center space-x-4 rounded-lg mt-[56px] md:mt-[10px]"
+                className="feature-item flex items-start space-x-4 rounded-lg mt-[56px] md:mt-[10px]"
               >
                 {/* Image: 100px on mobile, 160px on md+ */}
                 <img
