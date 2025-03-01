@@ -57,11 +57,11 @@ export default function Header() {
           <header className="flex h-20 w-full items-center justify-between max-w-[1680px]">
             <Link href="/" className="inline-flex items-center">
               <img
-                src="/assets/images/Logo.svg"
+                src="/assets/images/Logo.png"
                 alt="Marbūt Logo"
-                className="h-8 w-8 mr-2"
+                className="h-[35px] w-[163px] mr-2"
               />
-              <span className="text-[40px] font-medium">Marbūt</span>
+              {/* <span className="text-[40px] font-medium">Marbūt</span> */}
             </Link>
 
             {/* Mobile Menu Button */}
