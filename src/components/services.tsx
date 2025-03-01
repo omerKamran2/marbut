@@ -208,7 +208,7 @@ const ServicesSection: FC = () => {
             "
           >
             {/* Service Title: 24px on mobile, 48px on md+ */}
-            <h2 className="mb-[36px] pt-[96px] md:pt-[20px] font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
+            <h2 className="mb-[36px] pt-[144px] md:pt-[20px] font-medium text-[#1E1E1E] leading-tight text-[32px] md:text-[48px]">
               {service.title}
             </h2>
             {/* Service Description: 20px on mobile, 24px on md+ */}

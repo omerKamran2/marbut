@@ -20,7 +20,7 @@ export default function Home() {
         <section id="herosection" className=" md:pb-[160px]">
           <HeroSection />
         </section>
-        <section id="services" className="pb-[160px]">
+        <section id="services" className="pb-[120px]">
           <Services />
         </section>
         <section id="success_stories" >
