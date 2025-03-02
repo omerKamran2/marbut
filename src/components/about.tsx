@@ -16,6 +16,10 @@ export default function HeroSection() {
     },
   };
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="flex flex-col items-center justify-center px-4 text-center">
       <motion.h1
@@ -54,6 +58,7 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, delay: 0.2 }}
+        onClick={() => scrollToSection("contact")}
       >
         Start Hiring
       </motion.button>
