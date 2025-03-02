@@ -28,8 +28,8 @@ const testimonials = [
     },
     {
         id: "3",
-        name: "Noman Khan",
-        designation: "Managing Partner @ Young Friends Partnet Ltd.",
+        name: "Noman Ahmed Khan",
+        designation: "Managing Partner @ Young Friends Partner Ltd.",
         feedback: "Marbut has been instrumental in helping my firm find exceptional remote talent from Pakistan. The account executives they sourced have exceeded expectations in both skill and professionalism. Muhammad demonstrates an unwavering commitment to delivering top-tier candidates. I highly recommend Marbut for anyone seeking reliable and efficient recruitment services.",
         image: "/assets/images/person3.jpeg"
     }

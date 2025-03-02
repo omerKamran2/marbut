@@ -15,7 +15,7 @@ const ServicesSection: FC = () => {
       features: [
         {
           title: "Hire the Top 1%",
-          detail: "High caliber professionals, fully onboarded",
+          detail: "Highly qualified professionals, fully onboarded",
           image: "/assets/images/1.svg",
         },
         {
@@ -57,7 +57,7 @@ const ServicesSection: FC = () => {
       features: [
         {
           title: "Fully Bespoke",
-          detail: "Strategic hiring plans built around your specific business needs",
+          detail: "Strategic hiring plans built around your specific business needs.",
           image: "/assets/images/fully_bespoke.png",
         },
         {
@@ -66,7 +66,7 @@ const ServicesSection: FC = () => {
           image: "/assets/images/7.svg",
         },
         {
-          title: "Hiring Specialists",
+          title: "We Hire Specialists",
           detail: "Industry specific expertise for specialised roles.",
           image: "/assets/images/8.svg",
         },
