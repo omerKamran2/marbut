@@ -56,20 +56,12 @@ export default function Header() {
         <div className="flex justify-center mx-auto px-4 md:px-6 lg:px-8">
           <header className="flex h-20 w-full items-center justify-between max-w-[1680px]">
             <Link href="/" className="inline-flex items-center">
-              <img
-                src="/assets/images/Logo.png"
-                alt="Marbūt Logo"
-                className="h-[35px] w-[163px] mr-2"
-              />
+              <img src="/assets/images/Logo.png" alt="Marbūt Logo" className="h-[35px] w-[163px] mr-2" />
               {/* <span className="text-[40px] font-medium">Marbūt</span> */}
             </Link>
 
             {/* Mobile Menu Button */}
-            <button
-              className="block md:hidden p-2"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
+            <button className="block md:hidden p-2" onClick={toggleMenu} aria-label="Toggle menu">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-black"
@@ -77,12 +69,7 @@ export default function Header() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
 
@@ -137,10 +124,7 @@ export default function Header() {
           >
             <div className="flex flex-col items-center gap-2 pb-4">
               {/* Close button (optional) */}
-              <button
-                className="text-white hover:text-gray-300 self-end mr-4"
-                onClick={toggleMenu}
-              >
+              <button className="text-white hover:text-gray-300 self-end mr-4" onClick={toggleMenu}>
                 ✕
               </button>
 

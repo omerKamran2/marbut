@@ -14,10 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="my-font-family"
-      >
-         <ThemeProvider>{children}</ThemeProvider>
+      <body className="my-font-family">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

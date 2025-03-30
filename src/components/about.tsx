@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -39,7 +39,8 @@ export default function HeroSection() {
         animate="visible"
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        We source the top 1% professionals who are seasoned experts from top global firms and distinguished alumni of Pakistan’s premier universities.
+        We source the top 1% professionals who are seasoned experts from top global firms and distinguished alumni of
+        Pakistan’s premier universities.
       </motion.p>
 
       <motion.p

@@ -3,11 +3,7 @@
 import Image from "next/image";
 import { FC } from "react";
 // Adjust the import path for your shadcn Card component:
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import AnimatedCircle from "./animated-circle";
 
 const HeroSection: FC = () => {
@@ -40,21 +36,13 @@ const HeroSection: FC = () => {
           >
             <CardHeader className="flex flex-col items-center">
               <div className="mb-2">
-                <Image
-                  src={item.src}
-                  alt={item.text}
-                  width={60}
-                  height={60}
-                />
+                <Image src={item.src} alt={item.text} width={60} height={60} />
               </div>
-              <CardTitle className="text-center text-sm font-medium leading-tight text-[16px]">
-                {item.text}
-              </CardTitle>
+              <CardTitle className="text-center text-sm font-medium leading-tight text-[16px]">{item.text}</CardTitle>
             </CardHeader>
           </Card>
         ))}
       </div>
-
 
       {/* Large Circle Image & Text */}
       <div className="flex flex-col items-center text-center">
@@ -89,15 +77,16 @@ const HeroSection: FC = () => {
         "
         >
           {/* A different mobile text */}
-          We craft teams with
-          intension, precision, & impact
+          We craft teams with intension, precision, & impact
         </h2>
         {/* Subheading / Paragraph */}
         <p className="hidden md:block max-w-3xl text-[24px] text-[#757575] md:text-lg font-medium">
-          Our talent solutions ensure every hire is a strategic asset <br />raising your team’s talent density, not just a seat filled.
+          Our talent solutions ensure every hire is a strategic asset <br />
+          raising your team’s talent density, not just a seat filled.
         </p>
         <p className="block md:hidden max-w-3xl text-[20px] md:text-[24px] text-[#757575] md:text-lg font-medium">
-          Our talent solutions ensure every hire is a strategic asset raising your team’s talent density, not just a seat filled.
+          Our talent solutions ensure every hire is a strategic asset raising your team’s talent density, not just a
+          seat filled.
         </p>
       </div>
     </section>

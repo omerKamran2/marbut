@@ -27,19 +27,16 @@ const ServicesSection: FC = () => {
     },
     {
       title: "End to End Recruitment Support",
-      description:
-        "We take guesswork out of the hiring process, so you can fully focus on your business.",
+      description: "We take guesswork out of the hiring process, so you can fully focus on your business.",
       features: [
         {
           title: "Candidate Screening",
-          detail:
-            "We handle everything from resume reviews to interviews and skill assessments.",
+          detail: "We handle everything from resume reviews to interviews and skill assessments.",
           image: "/assets/images/candidate_screening.png",
         },
         {
           title: "Cultural Fit Assessment",
-          detail:
-            "We source candidates who align with your company’s values, work ethic, and vision.",
+          detail: "We source candidates who align with your company’s values, work ethic, and vision.",
           image: "/assets/images/cultural_fit_assessment.png",
         },
         {
@@ -74,8 +71,7 @@ const ServicesSection: FC = () => {
     },
     {
       title: "Results First, Payment Later",
-      description:
-        "Our approach ensures you only pay for successful hires, keeping the process risk-free.",
+      description: "Our approach ensures you only pay for successful hires, keeping the process risk-free.",
       features: [
         {
           title: "Zero Upfront Cost",
@@ -114,9 +110,8 @@ const ServicesSection: FC = () => {
      * 2) For screens >= 768px, run your existing pinned/scroll animations.
      */
     ScrollTrigger.matchMedia({
-
       // (A) Disable on mobile
-      "(max-width: 767px)": function() {
+      "(max-width: 767px)": function () {
         // Do nothing => no GSAP timeline for mobile
       },
 
@@ -164,7 +159,7 @@ const ServicesSection: FC = () => {
               duration: 1.5,
               ease: "power3.out",
             },
-            "-=0.5"
+            "-=0.5",
           );
 
           // Exit animation
@@ -176,11 +171,10 @@ const ServicesSection: FC = () => {
               duration: 1.2,
               ease: "power4.in",
             },
-            "+=0.2"
+            "+=0.2",
           );
         });
       },
-
     });
   }, []);
 
@@ -212,18 +206,13 @@ const ServicesSection: FC = () => {
               {service.title}
             </h2>
             {/* Service Description: 20px on mobile, 24px on md+ */}
-            <p className=" text-[#757575] font-medium text-[20px] md:text-[24px]">
-              {service.description}
-            </p>
+            <p className=" text-[#757575] font-medium text-[20px] md:text-[24px]">{service.description}</p>
           </div>
 
           {/* Right Column */}
           <div className="right-col w-full md:mt-0 md:w-1/2">
             {service.features.map((feature, i) => (
-              <div
-                key={i}
-                className="feature-item flex items-start space-x-4 rounded-lg mt-[56px] md:mt-[10px]"
-              >
+              <div key={i} className="feature-item flex items-start space-x-4 rounded-lg mt-[56px] md:mt-[10px]">
                 {/* Image: 100px on mobile, 160px on md+ */}
                 <img
                   src={feature.image}
@@ -233,14 +222,10 @@ const ServicesSection: FC = () => {
                 <div>
                   {/* Feature Title: 24px on mobile (unchanged), 
                       if you need it bigger on desktop, do e.g. md:text-[28px] */}
-                  <h3 className="text-[#1E1E1E] font-medium text-[24px] font-thin">
-                    {feature.title}
-                  </h3>
+                  <h3 className="text-[#1E1E1E] font-medium text-[24px] font-thin">{feature.title}</h3>
                   {/* Feature Description: 16px on both mobile & desktop (already 16). 
                       If you want a bigger size on desktop, add md:text-[18px] etc. */}
-                  <p className="mt-1 text-[#757575] text-[16px] font-medium">
-                    {feature.detail}
-                  </p>
+                  <p className="mt-1 text-[#757575] text-[16px] font-medium">{feature.detail}</p>
                 </div>
               </div>
             ))}

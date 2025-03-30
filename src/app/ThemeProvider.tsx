@@ -26,11 +26,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
 
-  return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {
