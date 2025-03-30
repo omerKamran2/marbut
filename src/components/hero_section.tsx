@@ -5,8 +5,10 @@ import { FC } from "react";
 // Adjust the import path for your shadcn Card component:
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import AnimatedCircle from "./animated-circle";
+import { useTheme } from "@/app/ThemeProvider";
 
 const HeroSection: FC = () => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
   // Data for the top circles
   const circleItems = [
     {
@@ -50,43 +52,21 @@ const HeroSection: FC = () => {
           <AnimatedCircle></AnimatedCircle>
         </div>
         {/* Heading */}
-        <h2
-          className="
-            hidden 
-            md:block
-            text-[48px] 
-            font-medium 
-            text-[#1E1E1E] 
-            pb-[32px] 
-            leading-tight
-          "
-        >
+        <h2 className={`hidden md:block text-[48px] font-medium pb-[32px] leading-tight ${isDarkMode ? "text-white" : "text-[#1E1E1E]"}`}>
           We craft teams with <br /> intention, precision, &amp; impact
         </h2>
 
         {/* Mobile Title */}
-        <h2
-          className="
-          block
-          md:hidden
-          text-[32px] 
-          font-medium 
-          text-[#1E1E1E] 
-          pb-[16px] 
-          leading-tight
-        "
-        >
+        <h2 className={`block md:hidden text-[48px] font-medium pb-[32px] leading-tight ${isDarkMode ? "text-white" : "text-[#1E1E1E]"}`}>
           {/* A different mobile text */}
           We craft teams with intension, precision, & impact
         </h2>
         {/* Subheading / Paragraph */}
-        <p className="hidden md:block max-w-3xl text-[24px] text-[#757575] md:text-lg font-medium">
-          Our talent solutions ensure every hire is a strategic asset <br />
-          raising your team’s talent density, not just a seat filled.
+        <p className={`hidden md:block max-w-3xl text-[24px] md:text-lg font-medium ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}>
+          Our talent solutions ensure every hire is a strategic asset <br /> raising your team’s talent density, not just a seat filled.
         </p>
-        <p className="block md:hidden max-w-3xl text-[20px] md:text-[24px] text-[#757575] md:text-lg font-medium">
-          Our talent solutions ensure every hire is a strategic asset raising your team’s talent density, not just a
-          seat filled.
+        <p className={`block md:hidden max-w-3xl text-[20px] md:text-[24px] md:text-lg font-medium ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}>
+          Our talent solutions ensure every hire is a strategic asset raising your team’s talent density, not just a seat filled.
         </p>
       </div>
     </section>
