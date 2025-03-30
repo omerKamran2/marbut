@@ -35,7 +35,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className={`hidden md:block max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px]  ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}
+        className={`hidden md:block max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px] ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -45,7 +45,7 @@ export default function HeroSection() {
       </motion.p>
 
       <motion.p
-        className="block md:hidden max-w-4xl text-[20px] md:text-[24px] font-medium pb-[48px] text-[#757575]"
+        className={`block md:hidden max-w-4xl text-[20px] md:text-[24px] font-medium pb-[48px] ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
