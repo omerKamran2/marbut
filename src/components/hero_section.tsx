@@ -8,7 +8,7 @@ import AnimatedCircle from "./animated-circle";
 import { useTheme } from "@/app/ThemeProvider";
 
 const HeroSection: FC = () => {
-  const { isDarkMode, toggleDarkMode } = useTheme();
+  const { isDarkMode } = useTheme();
   // Data for the top circles
   const circleItems = [
     {
