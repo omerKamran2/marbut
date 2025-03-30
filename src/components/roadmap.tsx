@@ -1,7 +1,9 @@
 "use client";
+import { useTheme } from "@/app/ThemeProvider";
 import { FC } from "react";
 
 const RoadMap: FC = () => {
+  const { isDarkMode } = useTheme();
   // Define your steps data here
   const steps = [
     {
@@ -16,8 +18,7 @@ const RoadMap: FC = () => {
     },
     {
       title: "Job Distribution",
-      description:
-        "We tap into our exclusive talent network and top university partnerships to source the best candidates.",
+      description: "We tap into our exclusive talent network and top university partnerships to source the best candidates.",
       image: "/assets/images/14.svg",
     },
     {
@@ -49,7 +50,7 @@ const RoadMap: FC = () => {
 
   return (
     <section className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-      <h2 className="text-center text-[32px] md:text-[48px] font-medium text-[#1E1E1E] pb-[32px] md:pb-[160px]">
+      <h2 className={`text-center text-[32px] md:text-[48px] font-medium pb-[32px] md:pb-[160px] ${isDarkMode ? "text-white" : "text-[#1E1E1E]"}`}>
         Our Hiring Process
       </h2>
       <div className="space-y-[42px] md:space-y-[24px] pt-[32px]">
@@ -57,18 +58,14 @@ const RoadMap: FC = () => {
           <div key={index} className="flex items-center space-x-4">
             {/* Placeholder for step image/thumbnail */}
             {/* <div className="h-[160px] w-[160px] flex-shrink-0 bg-gray-200" /> */}
-            <img
-              src={step.image}
-              alt={step.title}
-              className="h-[100px] w-[100px] md:h-[160px] md:w-[160px] flex-shrink-0 rounded object-cover"
-            />
+            <img src={step.image} alt={step.title} className="h-[100px] w-[100px] md:h-[160px] md:w-[160px] flex-shrink-0 rounded object-cover" />
 
             {/* Step Text */}
             <div>
-              <h2 className="mb-1 font-medium text-[#1E1E1E] text-[24px] leading-tight">
+              <h2 className={`mb-1 font-medium text-[24px] leading-tight ${isDarkMode ? "text-white" : "text-[#1E1E1E]"}`}>
                 {index + 1}. {step.title}
               </h2>
-              <p className="text-[#757575] text-[16px] font-medium">{step.description}</p>
+              <p className={`text-[16px] font-medium ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}>{step.description}</p>
             </div>
           </div>
         ))}
