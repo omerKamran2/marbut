@@ -1,8 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitterSquare, faInstagram, faLinkedin, faTiktok, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 
 // Footer
 export default function Footer() {
@@ -50,13 +46,7 @@ export default function Footer() {
 
               {/* Twitter */}
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor">
                   <path
                     d="M459.37 151.716c.325 
             4.548.325 9.097.325 13.645 
@@ -85,13 +75,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
                   <path
                     d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24 
             108 0 83.32 0 53.86A53.86 53.86 0 0 1 53.84 

@@ -3,7 +3,7 @@ import { useTheme } from "@/app/ThemeProvider";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const { isDarkMode, toggleDarkMode } = useTheme();
+  const { isDarkMode } = useTheme();
   // Define some framer-motion variants for a simple fade/scale-in
   const heroVariants = {
     hidden: { opacity: 0, scale: 0.8 },
