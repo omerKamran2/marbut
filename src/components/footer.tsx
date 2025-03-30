@@ -16,7 +16,11 @@ export default function Footer() {
           <div className="space-y-4">
             {/* Logo */}
             <Link href="/" className="inline-flex items-center">
-              <img src="/assets/images/Logo.png" alt="Marbūt Logo" className="h-[35px] w-[163px] mr-2" />
+              <img
+                src={`${isDarkMode ? "/assets/images/dark-logo.png" : "/assets/images/light-logo.png"}`}
+                alt="Marbūt Logo"
+                className="h-[35px] w-[163px] mr-2"
+              />
             </Link>
 
             {/* Social Icons */}

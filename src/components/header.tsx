@@ -49,7 +49,11 @@ export default function Header() {
         <div className="flex justify-center mx-auto px-4 md:px-6 lg:px-8">
           <header className="flex h-20 w-full items-center justify-between max-w-[1680px]">
             <Link href="/" className="inline-flex items-center">
-              <img src="/assets/images/Logo.png" alt="Marbūt Logo" className="h-[35px] w-[163px] mr-2" />
+              <img
+                src={`${isDarkMode ? "/assets/images/dark-logo.png" : "/assets/images/light-logo.png"}`}
+                alt="Marbūt Logo"
+                className="h-[35px] w-[163px] mr-2"
+              />
             </Link>
 
             {/* 🌙 Dark Mode Toggle Button */}
