@@ -1,7 +1,9 @@
-'use client'
+"use client";
+import { useTheme } from "@/app/ThemeProvider";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const { isDarkMode } = useTheme();
   // Define some framer-motion variants for a simple fade/scale-in
   const heroVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -23,7 +25,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col items-center justify-center px-4 text-center">
       <motion.h1
-        className="text-[56px] md:text-[72px] font-medium pb-[32px] md:pb-[72px] text-[#1E1E1E] leading-tight"
+        className={`text-[56px] md:text-[72px] font-medium pb-[32px] md:pb-[72px] leading-tight ${isDarkMode ? "text-white" : "text-[#1E1E1E]"}`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -33,7 +35,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="hidden md:block text-gray-600 max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px] text-[#757575]"
+        className={`hidden md:block max-w-4xl text-[20px] md:text-[24px] font-medium pb-[72px] ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -43,7 +45,7 @@ export default function HeroSection() {
       </motion.p>
 
       <motion.p
-        className="block md:hidden text-gray-600 max-w-4xl text-[20px] md:text-[24px] font-medium pb-[48px] text-[#757575]"
+        className={`block md:hidden max-w-4xl text-[20px] md:text-[24px] font-medium pb-[48px] ${isDarkMode ? "text-[#D1D1D6]" : "text-[#757575]"}`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -53,7 +55,9 @@ export default function HeroSection() {
       </motion.p>
 
       <motion.button
-        className="flex justify-center items-center bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition w-[240px] h-[40px] text-[16px] font-medium"
+        className={`flex justify-center items-center bg-primary hover:bg-primary/90 px-6 py-3 rounded-md transition w-[240px] h-[40px] text-[16px] font-medium ${
+          isDarkMode ? "text-black" : "text-white"
+        }`}
         variants={heroVariants}
         initial="hidden"
         animate="visible"

@@ -48,7 +48,7 @@ const AnimatedCircle: FC = () => {
             gsap.set(circle, {
               x,
               y,
-              background: `hsl(${(angleDeg + 180)% 360}, 100%, 50%)`,
+              background: `hsl(${(angleDeg + 180) % 360}, 100%, 50%)`,
             });
           }
         });

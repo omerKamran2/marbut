@@ -1,4 +1,3 @@
-
 import Header from "@/components/header";
 import About from "@/components/about";
 import SuccessStories from "@/components/succes_stories";
@@ -7,7 +6,6 @@ import Services from "@/components/services";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero_section";
 import RoadMap from "@/components/roadmap";
-
 
 export default function Home() {
   return (
@@ -23,7 +21,7 @@ export default function Home() {
         <section id="services" className="pb-[120px]">
           <Services />
         </section>
-        <section id="success_stories" >
+        <section id="success_stories">
           <SuccessStories />
         </section>
         <section id="roadmap" className="pt-[89px] md:pt-[160px]">
