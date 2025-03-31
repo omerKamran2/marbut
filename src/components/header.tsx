@@ -56,12 +56,11 @@ export default function Header() {
               />
             </Link>
 
-            {/* 🌙 Dark Mode Toggle Button */}
-            <Button variant="ghost" onClick={toggleDarkMode} className="h-[32px] rounded-[8px] text-[16px]">
-              {isDarkMode ? "Light Mode" : "Dark Mode"}
-            </Button>
-
             {/* Mobile Menu Button */}
+            {/* 🌙 Dark Mode Toggle Button */}
+            <Button variant="ghost" onClick={toggleDarkMode} className="block md:hidden h-[32px] rounded-[8px] text-[16px] ml-24">
+              {isDarkMode ? "🌞" : "🌙"}
+            </Button>
             <button className="block md:hidden p-2" onClick={toggleMenu} aria-label="Toggle menu">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -70,6 +69,11 @@ export default function Header() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-4">
+              {/* 🌙 Dark Mode Toggle Button */}
+              <Button variant="ghost" onClick={toggleDarkMode} className="h-[32px] rounded-[8px] text-[16px]">
+                {isDarkMode ? "🌞" : "🌙"}
+              </Button>
+
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("services")}
