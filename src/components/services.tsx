@@ -158,7 +158,7 @@ const ServicesSection: FC = () => {
               duration: 1.5,
               ease: "power3.out",
             },
-            "-=0.5"
+            "-=0.5",
           );
 
           // Exit animation
@@ -170,7 +170,7 @@ const ServicesSection: FC = () => {
               duration: 1.2,
               ease: "power4.in",
             },
-            "+=0.2"
+            "+=0.2",
           );
         });
       },
@@ -188,7 +188,7 @@ const ServicesSection: FC = () => {
           className="service-section flex flex-col md:flex-row"
         >
           {/* Left Column */}
-          <div className={`left-colw-full md:w-1/2 md:pr-10 flex flex-col items-center md:items-start text-center md:text-left`}>
+          <div className={`left-col w-full md:w-1/2 md:pr-10 flex flex-col items-center md:items-start text-center md:text-left`}>
             {/* Service Title: 24px on mobile, 48px on md+ */}
             <h2
               className={`mb-[36px] pt-[144px] md:pt-[20px] font-medium leading-tight text-[32px] md:text-[48px] ${
